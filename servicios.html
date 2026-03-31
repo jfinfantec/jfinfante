@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servicios — Juan Infante</title>
+<link rel="stylesheet" href="https://use.typekit.net/utj7jfa.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,800;1,300;1,800&display=swap" rel="stylesheet">
+<style>
+  :root{--black:#0a0a0a;--blue:#172DE2;--green:#25D366;--white:#ffffff;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Poppins',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;cursor:none;}
+  .cursor{width:10px;height:10px;background:var(--blue);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform 0.15s ease;}
+  .cursor-ring{width:34px;height:34px;border:1px solid rgba(23,45,226,0.5);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width 0.3s,height 0.3s;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);background:rgba(10,10,10,0.85);border-bottom:1px solid rgba(255,255,255,0.05);}
+  .nav-logo img{height:30px;width:auto;filter:brightness(0) invert(1);}
+  .nav-links{display:flex;gap:36px;list-style:none;}
+  .nav-links a{font-size:11px;font-weight:300;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.3s;}
+  .nav-links a:hover{color:var(--white);}
+  .nav-cta{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--black);background:var(--green);padding:10px 22px;border-radius:3px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;}
+  .nav-cta:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(37,211,102,0.4);}
+
+  .section{padding:120px 48px 80px;}
+  .divider{height:1px;background:rgba(255,255,255,0.06);margin:80px 0;}
+
+  .section-title{font-family:'widescreen',sans-serif;font-weight:900;font-size:clamp(40px,7vw,90px);line-height:0.92;letter-spacing:-3px;margin-bottom:28px;}
+  .section-body{font-size:15px;font-weight:300;color:rgba(255,255,255,0.5);max-width:600px;line-height:1.9;}
+  .section-body strong{color:var(--white);font-weight:800;}
+  .section-body em{font-style:italic;color:rgba(255,255,255,0.7);}
+
+  .video-preview-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:48px;}
+  .video-embed-v{position:relative;padding-bottom:177.78%;height:0;overflow:hidden;border-radius:4px;background:#111;}
+  .video-embed-v iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+  .video-preview-title{font-size:12px;font-weight:800;margin-top:8px;color:rgba(255,255,255,0.7);}
+
+  .foto-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:48px;}
+  .foto-item{overflow:hidden;aspect-ratio:1;}
+  .foto-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;filter:grayscale(15%);}
+  .foto-item:hover img{transform:scale(1.05);filter:grayscale(0%);}
+
+  .diseno-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:48px;}
+  .diseno-item{overflow:hidden;aspect-ratio:9/16;}
+  .diseno-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;}
+  .diseno-item:hover img{transform:scale(1.05);}
+
+  .servicios-lista{margin-top:48px;display:flex;flex-direction:column;gap:0;}
+  .servicio-item{padding:28px 0;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:flex-start;gap:20px;}
+  .servicio-arrow{color:var(--blue);font-weight:800;font-size:20px;flex-shrink:0;margin-top:2px;}
+  .servicio-texto{font-size:16px;font-weight:300;color:rgba(255,255,255,0.7);line-height:1.6;}
+  .servicio-texto strong{color:var(--white);font-weight:800;}
+
+  .proceso-lista{margin-top:48px;display:flex;flex-direction:column;gap:0;max-width:640px;}
+  .proceso-item{display:flex;gap:24px;padding-bottom:36px;position:relative;}
+  .proceso-item:not(:last-child)::before{content:'';position:absolute;left:19px;top:44px;width:2px;height:calc(100% - 44px);background:rgba(23,45,226,0.2);}
+  .proceso-num{width:40px;height:40px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0;}
+  .proceso-content p{font-size:15px;font-weight:300;color:rgba(255,255,255,0.6);line-height:1.7;margin-top:10px;}
+  .proceso-content p strong{color:var(--white);font-weight:800;}
+  .proceso-content p em{font-style:italic;}
+
+  footer{padding:32px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.05);}
+  footer p{font-size:11px;font-weight:300;color:rgba(255,255,255,0.2);}
+  footer a{color:var(--blue);text-decoration:none;font-weight:800;}
+  footer img{height:22px;width:auto;opacity:0.3;filter:brightness(0) invert(1);}
+
+  @media(max-width:768px){
+    nav{padding:18px 20px;} .nav-links{display:none;}
+    .section{padding:100px 20px 60px;}
+    .video-preview-grid{grid-template-columns:repeat(2,1fr);}
+    .foto-grid{grid-template-columns:repeat(2,1fr);}
+    .diseno-grid{grid-template-columns:repeat(2,1fr);}
+    footer{flex-direction:column;gap:16px;padding:28px 20px;text-align:center;}
+  }
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<nav>
+  <a href="index.html" class="nav-logo"><img src="LOGO_JUAN_INFANTE.svg" alt="Juan Infante"></a>
+  <ul class="nav-links">
+    <li><a href="video.html">Video</a></li>
+    <li><a href="servicios.html">Servicios</a></li>
+    <li><a href="quiensoy.html">Quién soy</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
+  <a href="https://wa.link/1ikw5z" class="nav-cta" target="_blank">💬 Hablemos</a>
+</nav>
+
+<section class="section">
+
+  <h1 class="section-title">¿QUÉ HAGO?</h1>
+  <p class="section-body">Trabajo con marcas y negocios que necesitan <strong>ordenar su comunicación</strong> y convertirla en una herramienta comercial.<br><br>Mi trabajo parte de entender el negocio y la estrategia, para luego ejecutar <strong>contenido audiovisual y diseño con criterio narrativo, técnico y comercial.</strong><br><br><em>Cada pieza se piensa para cumplir un objetivo concreto: atraer, comunicar y convertir.</em></p>
+
+  <div class="divider"></div>
+
+  <h2 class="section-title">VIDEO</h2>
+  <p style="font-family:'widescreen',sans-serif;font-weight:900;font-size:clamp(18px,2.5vw,32px);color:var(--blue);letter-spacing:-1px;margin-bottom:20px;">REELS · TIKTOK · SHORTS</p>
+  <p class="section-body">Producción y edición de video pensada para <strong>comunicar claro, sostener atención y posicionar marca.</strong></p>
+
+  <div class="video-preview-grid">
+    <div>
+      <div class="video-embed-v"><iframe src="https://player.vimeo.com/video/1178731288" allowfullscreen></iframe></div>
+      <p class="video-preview-title">Reel Lanzamiento</p>
+    </div>
+    <div>
+      <div class="video-embed-v"><iframe src="https://player.vimeo.com/video/1178730647" allowfullscreen></iframe></div>
+      <p class="video-preview-title">Reel Evento</p>
+    </div>
+    <div>
+      <div class="video-embed-v"><iframe src="https://player.vimeo.com/video/1178731542" allowfullscreen></iframe></div>
+      <p class="video-preview-title">Motion Graphics</p>
+    </div>
+    <div>
+      <div class="video-embed-v"><iframe src="https://player.vimeo.com/video/1178731273" allowfullscreen></iframe></div>
+      <p class="video-preview-title">Reel Promocional</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2 class="section-title">FOTOGRAFÍA</h2>
+  <p class="section-body">Pensada para <strong>comunicación digital, identidad visual y uso comercial.</strong></p>
+
+  <div class="foto-grid">
+    <div class="foto-item"><img src="foto (1).jpg" alt=""></div>
+    <div class="foto-item"><img src="foto (2).jpg" alt=""></div>
+    <div class="foto-item"><img src="foto (3).jpg" alt=""></div>
+    <div class="foto-item"><img src="foto (4).jpg" alt=""></div>
+    <div class="foto-item"><img src="foto (6).jpg" alt=""></div>
+    <div class="foto-item"><img src="foto (7).jpg" alt=""></div>
+    <div class="foto-item"><img src="foto (8).jpg" alt=""></div>
+    <div class="foto-item"><img src="foto (9).jpg" alt=""></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2 class="section-title">DISEÑO<br>GRÁFICO</h2>
+  <p class="section-body">Aplicado a <strong>redes sociales y comunicación de marca.</strong></p>
+
+  <div class="diseno-grid">
+    <div class="diseno-item"><img src="5.jpg" alt=""></div>
+    <div class="diseno-item"><img src="16-mayo.jpg" alt=""></div>
+    <div class="diseno-item"><img src="28.jpg" alt=""></div>
+    <div class="diseno-item"><img src="fonda-isla.jpg" alt=""></div>
+    <div class="diseno-item"><img src="ISLA-29-NOVIEMBRE.jpg" alt=""></div>
+    <div class="diseno-item"><img src="MEDIA.jpg" alt=""></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2 class="section-title">SERVICIOS</h2>
+  <div class="servicios-lista">
+    <div class="servicio-item"><span class="servicio-arrow">→</span><p class="servicio-texto">Producción de <strong>CONTENIDO AUDIOVISUAL</strong> para redes sociales.</p></div>
+    <div class="servicio-item"><span class="servicio-arrow">→</span><p class="servicio-texto"><strong>FOTOGRAFÍA PROFESIONAL</strong> de producto, marca y eventos.</p></div>
+    <div class="servicio-item"><span class="servicio-arrow">→</span><p class="servicio-texto">Diseño gráfico para <strong>COMUNICACIÓN DIGITAL.</strong></p></div>
+    <div class="servicio-item"><span class="servicio-arrow">→</span><p class="servicio-texto"><em>Estrategia de contenido y planificación mensual.</em></p></div>
+    <div class="servicio-item"><span class="servicio-arrow">→</span><p class="servicio-texto"><strong>PRE-PRODUCCIÓN, PRODUCCIÓN Y POST-PRODUCCIÓN</strong> profesional de video.</p></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2 class="section-title">CÓMO ES<br>TRABAJAR<br>CONMIGO</h2>
+  <p class="section-body"><strong>El proceso es claro y ordenado.</strong></p>
+
+  <div class="proceso-lista">
+    <div class="proceso-item"><div class="proceso-num">1</div><div class="proceso-content"><p>Primero se define <strong>EL OBJETIVO Y EL MENSAJE.</strong></p></div></div>
+    <div class="proceso-item"><div class="proceso-num">2</div><div class="proceso-content"><p>Luego <strong>SE ESTRUCTURA LA IDEA</strong> y el formato adecuado.</p></div></div>
+    <div class="proceso-item"><div class="proceso-num">3</div><div class="proceso-content"><p>Se realiza la <strong>PRODUCCIÓN Y GRABACIÓN</strong> necesaria.</p></div></div>
+    <div class="proceso-item"><div class="proceso-num">4</div><div class="proceso-content"><p><strong>SE EDITA Y OPTIMIZA</strong> el material final.</p></div></div>
+    <div class="proceso-item"><div class="proceso-num">5</div><div class="proceso-content"><p>Se entregan las piezas <strong>LISTAS PARA SU PUBLICACIÓN.</strong></p></div></div>
+  </div>
+
+</section>
+
+<footer>
+  <p>© 2026 Juan Infante · <a href="https://jfinfante.video">jfinfante.video</a></p>
+  <img src="LOGO_JUAN_INFANTE.svg" alt="Juan Infante">
+  <p>La Ceja, Antioquia · Colombia</p>
+</footer>
+
+<script>
+  const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px';});
+  function animateRing(){rx+=(mx-rx)*0.1;ry+=(my-ry)*0.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animateRing);}
+  animateRing();
+  document.querySelectorAll('a,button').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{cursor.style.transform='translate(-50%,-50%) scale(2.5)';ring.style.width='54px';ring.style.height='54px';});
+    el.addEventListener('mouseleave',()=>{cursor.style.transform='translate(-50%,-50%) scale(1)';ring.style.width='34px';ring.style.height='34px';});
+  });
+</script>
+</body>
+</html>
