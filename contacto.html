@@ -24,7 +24,7 @@
   .contacto{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 48px 80px;position:relative;}
   .contacto-bg{position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 50% 50%,rgba(23,45,226,0.08) 0%,transparent 60%);pointer-events:none;}
 
-  .page-title{font-family:'widescreen',sans-serif;font-weight:900;font-size:clamp(52px,10vw,130px);line-height:0.9;letter-spacing:-4px;margin-bottom:60px;}
+  .page-title{font-family:'widescreen-ex',sans-serif;font-weight:900;font-size:clamp(52px,10vw,130px);line-height:0.9;letter-spacing:-4px;margin-bottom:60px;}
 
   .contacto-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;max-width:640px;width:100%;}
   .contacto-item{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);padding:36px 28px;transition:border-color 0.3s,background 0.3s;text-decoration:none;color:var(--white);text-align:left;}
@@ -48,7 +48,7 @@
   .hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px;transition:all 0.3s;}
   .mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--black);z-index:99;flex-direction:column;justify-content:center;align-items:center;gap:32px;}
   .mobile-menu.open{display:flex;}
-  .mobile-menu a{font-size:clamp(24px,6vw,36px);font-family:'widescreen',sans-serif;font-weight:900;color:var(--white);text-decoration:none;letter-spacing:-1px;transition:color 0.3s;}
+  .mobile-menu a{font-size:clamp(24px,6vw,36px);font-family:'widescreen-ex',sans-serif;font-weight:900;color:var(--white);text-decoration:none;letter-spacing:-1px;transition:color 0.3s;}
   .mobile-menu a:hover{color:var(--blue);}
   .mobile-menu .close{position:absolute;top:24px;right:24px;font-size:28px;cursor:pointer;color:var(--white);background:none;border:none;font-family:'Poppins',sans-serif;}
 
@@ -97,9 +97,9 @@
       <p class="contacto-tipo">WhatsApp</p>
       <p class="contacto-valor">💬 Escribir ahora</p>
     </a>
-    <a href="mailto:juanfelipeinfantecarreno@gmail.com" class="contacto-item">
+    <a href="/cdn-cgi/l/email-protection#49233c28272f2c2520392c20272f28273d2c2a283b3b2c2726092e24282025672a2624" class="contacto-item">
       <p class="contacto-tipo">Correo</p>
-      <p class="contacto-valor">juanfelipeinfantecarreno@gmail.com</p>
+      <p class="contacto-valor"><span class="__cf_email__" data-cfemail="056f70646b6360696c75606c6b63646b716066647777606b6a456268646c692b666a68">[email&#160;protected]</span></p>
     </a>
     <div class="contacto-item">
       <p class="contacto-tipo">Instagram</p>
@@ -120,16 +120,11 @@
   <p>La Ceja, Antioquia · Colombia</p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
   let mx=0,my=0,rx=0,ry=0;
   document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px';});
   function animateRing(){rx+=(mx-rx)*0.1;ry+=(my-ry)*0.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animateRing);}
   animateRing();
   document.querySelectorAll('a,button').forEach(el=>{
-    el.addEventListener('mouseenter',()=>{cursor.style.transform='translate(-50%,-50%) scale(2.5)';ring.style.width='54px';ring.style.height='54px';});
-    el.addEventListener('mouseleave',()=>{cursor.style.transform='translate(-50%,-50%) scale(1)';ring.style.width='34px';ring.style.height='34px';});
-  });
-</script>
-</body>
-</html>
+    el.addEventListener('mouseenter',()=>{cursor.style.transf
