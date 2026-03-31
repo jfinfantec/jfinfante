@@ -21,32 +21,41 @@
   .nav-cta{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--black);background:var(--green);padding:10px 22px;border-radius:3px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;}
   .nav-cta:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(37,211,102,0.4);}
 
-  .contacto{flex:1;display:flex;flex-direction:column;justify-content:center;padding:120px 48px 80px;position:relative;}
+  .contacto{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 48px 80px;position:relative;}
   .contacto-bg{position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 50% 50%,rgba(23,45,226,0.08) 0%,transparent 60%);pointer-events:none;}
 
   .page-title{font-family:'widescreen',sans-serif;font-weight:900;font-size:clamp(52px,10vw,130px);line-height:0.9;letter-spacing:-4px;margin-bottom:60px;}
 
-  .contacto-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;max-width:700px;}
-  .contacto-item{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);padding:36px 32px;transition:border-color 0.3s,background 0.3s;text-decoration:none;color:var(--white);}
+  .contacto-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;max-width:640px;width:100%;}
+  .contacto-item{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);padding:36px 28px;transition:border-color 0.3s,background 0.3s;text-decoration:none;color:var(--white);text-align:left;}
   .contacto-item:hover{border-color:rgba(23,45,226,0.4);background:rgba(23,45,226,0.05);}
   .contacto-item.green:hover{border-color:rgba(37,211,102,0.4);background:rgba(37,211,102,0.05);}
   .contacto-tipo{font-size:10px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:12px;}
-  .contacto-valor{font-size:16px;font-weight:800;}
+  .contacto-valor{font-size:15px;font-weight:800;}
   .contacto-item.green .contacto-valor{color:var(--green);}
-  .contacto-proximamente{font-size:12px;font-weight:300;color:rgba(255,255,255,0.2);font-style:italic;margin-top:4px;}
+  .contacto-proximamente{font-size:11px;font-weight:300;color:rgba(255,255,255,0.2);font-style:italic;margin-top:4px;}
 
-  .contacto-memoji{position:absolute;right:48px;bottom:80px;height:200px;width:auto;opacity:0.8;}
+  .memoji-contacto{height:120px;width:auto;margin-bottom:40px;}
 
   footer{padding:32px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.05);}
   footer p{font-size:11px;font-weight:300;color:rgba(255,255,255,0.2);}
   footer a{color:var(--blue);text-decoration:none;font-weight:800;}
   footer img{height:22px;width:auto;opacity:0.3;filter:brightness(0) invert(1);}
 
+
+  /* HAMBURGER */
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+  .hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px;transition:all 0.3s;}
+  .mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--black);z-index:99;flex-direction:column;justify-content:center;align-items:center;gap:32px;}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{font-size:clamp(24px,6vw,36px);font-family:'widescreen',sans-serif;font-weight:900;color:var(--white);text-decoration:none;letter-spacing:-1px;transition:color 0.3s;}
+  .mobile-menu a:hover{color:var(--blue);}
+  .mobile-menu .close{position:absolute;top:24px;right:24px;font-size:28px;cursor:pointer;color:var(--white);background:none;border:none;font-family:'Poppins',sans-serif;}
+
   @media(max-width:768px){
-    nav{padding:18px 20px;} .nav-links{display:none;}
+    nav{padding:18px 20px;} .nav-links{display:none;} .nav-cta-desktop{display:none;} .hamburger{display:flex;}
     .contacto{padding:100px 20px 60px;}
     .contacto-grid{grid-template-columns:1fr;}
-    .contacto-memoji{display:none;}
     footer{flex-direction:column;gap:16px;padding:28px 20px;text-align:center;}
   }
 </style>
@@ -62,11 +71,26 @@
     <li><a href="quiensoy.html">Quién soy</a></li>
     <li><a href="contacto.html">Contacto</a></li>
   </ul>
-  <a href="https://wa.link/1ikw5z" class="nav-cta" target="_blank">💬 Hablemos</a>
+  <a href="https://wa.link/1ikw5z" class="nav-cta nav-cta-desktop" target="_blank">💬 Hablemos</a>
+  <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
+  <a href="index.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Inicio</a>
+  <a href="video.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Video</a>
+  <a href="servicios.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Servicios</a>
+  <a href="quiensoy.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Quién soy</a>
+  <a href="contacto.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contacto</a>
+</div>
+
 
 <section class="contacto">
   <div class="contacto-bg"></div>
+  <img src="memoji-hola.webp" alt="" class="memoji-contacto">
   <h1 class="page-title">HABLEMOS.</h1>
   <div class="contacto-grid">
     <a href="https://wa.link/1ikw5z" class="contacto-item green" target="_blank">
@@ -88,7 +112,6 @@
       <p class="contacto-proximamente">Próximamente</p>
     </div>
   </div>
-  <img src="memoji-hola.webp" alt="" class="contacto-memoji">
 </section>
 
 <footer>
