@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video — Juan Infante</title>
+<link rel="stylesheet" href="https://use.typekit.net/utj7jfa.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,800;1,300;1,800&display=swap" rel="stylesheet">
+<style>
+  :root{--black:#0a0a0a;--blue:#172DE2;--green:#1aad52;--white:#ffffff;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Poppins',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;cursor:none;}
+  .cursor{width:10px;height:10px;background:var(--blue);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform 0.15s ease;}
+  .cursor-ring{width:34px;height:34px;border:1px solid rgba(23,45,226,0.5);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width 0.3s,height 0.3s;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);background:rgba(10,10,10,0.85);border-bottom:1px solid rgba(255,255,255,0.05);}
+  .nav-logo img{height:30px;width:auto;filter:brightness(0) invert(1);}
+  .nav-links{display:flex;gap:36px;list-style:none;}
+  .nav-links a{font-size:11px;font-weight:300;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.3s;}
+  .nav-links a:hover{color:var(--white);}
+  .nav-cta{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--white);background:var(--green);padding:10px 22px;border-radius:3px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;}
+  .nav-cta:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(37,211,102,0.4);}
+
+  .wrap{max-width:1100px;margin:0 auto;padding:120px 48px 80px;text-align:center;}
+  .divider{height:1px;background:rgba(255,255,255,0.06);margin:80px 0;}
+
+  /* ANTES Y DESPUÉS */
+  .before-after{display:grid;grid-template-columns:1fr 1.5fr;gap:32px;align-items:end;margin-bottom:80px;}
+  .ba-title-antes{font-family:'Poppins',sans-serif;font-style:italic;font-weight:300;font-size:clamp(16px,1.8vw,22px);color:rgba(255,255,255,0.35);margin-bottom:12px;}
+  .ba-title-despues{font-family:'widescreen-ex',sans-serif;font-weight:900;font-size:clamp(36px,5vw,72px);line-height:0.95;letter-spacing:-2px;margin-bottom:12px;}
+  .video-v{position:relative;padding-bottom:177.78%;height:0;overflow:hidden;border-radius:4px;background:#111;}
+  .video-v iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+
+  /* CREDIBILIDAD */
+  .cred-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:80px;}
+  .cred-item{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);padding:36px 28px;}
+  .cred-num{font-family:'widescreen-ex',sans-serif;font-weight:900;font-size:clamp(44px,5vw,72px);line-height:1;color:var(--blue);margin-bottom:8px;}
+  .cred-desc{font-size:14px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.6;}
+  .cred-desc strong{color:var(--white);font-weight:800;}
+
+  /* PORTAFOLIO */
+  .section-title{font-family:'widescreen-ex',sans-serif;font-weight:900;font-size:clamp(32px,5vw,64px);line-height:0.95;letter-spacing:-2px;margin-bottom:12px;}
+  .section-body{font-size:15px;font-weight:300;color:rgba(255,255,255,0.45);max-width:560px;line-height:1.85;margin-bottom:48px;margin-left:auto;margin-right:auto;}
+  .section-body strong{color:var(--white);font-weight:800;}
+  .section-body em{font-style:italic;color:rgba(255,255,255,0.65);}
+
+  /* VIDEO GRID — 3 columnas desktop, 1 móvil */
+  .videos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .vi-v .video-v{padding-bottom:177.78%;}
+  .vi-h{grid-column:span 2;}
+  .vi-h .video-h{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:4px;background:#111;}
+  .vi-h .video-h iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+  .video-title{font-size:13px;font-weight:800;margin-top:10px;color:var(--white);}
+
+  /* PREMIERE */
+  .premiere-titulo{font-family:'widescreen-ex',sans-serif;font-weight:900;font-size:clamp(26px,3.5vw,48px);line-height:0.95;letter-spacing:-1px;margin-bottom:12px;}
+  .premiere-sub{font-size:14px;font-weight:300;color:rgba(255,255,255,0.45);max-width:500px;line-height:1.85;margin-bottom:32px;margin-left:auto;margin-right:auto;}
+  .premiere-sub em{font-style:italic;} .premiere-sub strong{color:var(--white);font-weight:800;}
+  .premiere-box{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:4px;overflow:hidden;}
+  .premiere-header{padding:16px 24px;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:10px;}
+  .premiere-dot{width:10px;height:10px;border-radius:50%;background:var(--blue);}
+  .premiere-header p{font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);}
+  .premiere-img{width:100%;display:block;}
+  .premiere-caption{padding:16px 24px;font-size:12px;font-weight:300;color:rgba(255,255,255,0.35);line-height:1.75;text-align:center;}
+
+  /* CTA */
+  .cta-box{margin-top:80px;padding:60px;background:rgba(23,45,226,0.07);border:1px solid rgba(23,45,226,0.2);border-radius:4px;text-align:center;display:flex;flex-direction:column;align-items:center;}
+  .cta-box h3{font-family:'widescreen-ex',sans-serif;font-weight:900;font-size:clamp(28px,4vw,52px);line-height:0.95;letter-spacing:-1px;margin-bottom:12px;}
+  .cta-box p{font-size:14px;font-weight:300;color:rgba(255,255,255,0.45);margin-bottom:28px;}
+  .btn-green{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--white);background:var(--green);padding:14px 32px;border-radius:3px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;display:inline-flex;align-items:center;gap:10px;}
+  .btn-green:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(37,211,102,0.4);}
+
+  footer{padding:32px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.05);}
+  footer p{font-size:11px;font-weight:300;color:rgba(255,255,255,0.2);}
+  footer a{color:var(--blue);text-decoration:none;font-weight:800;}
+  footer img{height:22px;width:auto;opacity:0.3;filter:brightness(0) invert(1);}
+
+
+  /* HAMBURGER */
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:transparent;border:none;}
+  .hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px;transition:all 0.3s;}
+  .mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--black);z-index:99;flex-direction:column;justify-content:center;align-items:center;gap:32px;}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{font-size:clamp(24px,6vw,36px);font-family:'widescreen-ex',sans-serif;font-weight:900;color:var(--white);text-decoration:none;letter-spacing:-1px;transition:color 0.3s;}
+  .mobile-menu a:hover{color:var(--blue);}
+  .mobile-menu .close{position:absolute;top:24px;right:24px;font-size:28px;cursor:pointer;color:var(--white);background:none;border:none;font-family:'Poppins',sans-serif;}
+
+  @media(max-width:768px){
+    nav{padding:18px 20px;} .nav-links{display:none;} .nav-cta-desktop{display:none;} .hamburger{display:flex;}
+    .wrap{padding:100px 20px 60px;}
+    .before-after{grid-template-columns:1fr 1fr;gap:8px;}
+    .cred-grid{grid-template-columns:1fr;}
+    .videos-grid{grid-template-columns:1fr 1fr;gap:8px;}
+    .vi-h{grid-column:span 2;}
+    .cta-box{padding:40px 24px;}
+    footer{flex-direction:column;gap:16px;padding:28px 20px;text-align:center;}
+  }
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<nav>
+  <a href="/" class="nav-logo"><img src="../LOGO_JUAN_INFANTE.svg" alt="Juan Infante"></a>
+  <ul class="nav-links">
+    <li><a href="/miportafolio">Mi portafolio de video</a></li>
+    <li><a href="/servicios">Servicios</a></li>
+    <li><a href="/quiensoy">Quién soy</a></li>
+    <li><a href="/contacto">Contacto</a></li>
+  </ul>
+  <a href="https://wa.link/1ikw5z" class="nav-cta nav-cta-desktop" target="_blank">💬 Hablemos</a>
+  <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
+  <a href="/" onclick="document.getElementById('mobileMenu').classList.remove('open')">Inicio</a>
+  <a href="/miportafolio" onclick="document.getElementById('mobileMenu').classList.remove('open')">Mi portafolio de video</a>
+  <a href="/servicios" onclick="document.getElementById('mobileMenu').classList.remove('open')">Servicios</a>
+  <a href="/quiensoy" onclick="document.getElementById('mobileMenu').classList.remove('open')">Quién soy</a>
+  <a href="/contacto" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contacto</a>
+</div>
+
+
+<div class="wrap">
+
+  <div class="before-after">
+    <div>
+      <p class="ba-title-antes"><em>antes</em></p>
+      <div class="video-v"><iframe src="https://player.vimeo.com/video/1178755594" allowfullscreen></iframe></div>
+    </div>
+    <div>
+      <p class="ba-title-despues">DESPUÉS.</p>
+      <div class="video-v"><iframe src="https://player.vimeo.com/video/1178755765" allowfullscreen></iframe></div>
+    </div>
+  </div>
+
+  <div class="cred-grid">
+    <div class="cred-item"><p class="cred-num">+30</p><p class="cred-desc"><strong>marcas</strong> han confiado en este trabajo</p></div>
+    <div class="cred-item"><p class="cred-num">+5</p><p class="cred-desc"><strong>años</strong> de producción audiovisual real</p></div>
+    <div class="cred-item"><p class="cred-num">72h</p><p class="cred-desc">Entrega en <strong>72 horas</strong> para proyectos cortos. Sin excusas, sin atrasos.</p></div>
+  </div>
+
+  <h2 class="section-title">EDICIÓN CON<br>CRITERIO Y TÉCNICA.</h2>
+  <p class="section-body">Producción y edición de video pensada para <strong>comunicar claro, sostener atención y posicionar marca.</strong> <em>Desde preproducción hasta pieza publicada.</em></p>
+
+  <div class="videos-grid">
+    <div class="vi-v"><div class="video-v"><iframe src="https://player.vimeo.com/video/1179339027" allowfullscreen></iframe></div><p class="video-title">Storytelling Edición</p></div>
+    <div class="vi-v"><div class="video-v"><iframe src="https://player.vimeo.com/video/1178730647" allowfullscreen></iframe></div><p class="video-title">Reel Evento</p></div>
+    <div class="vi-v"><div class="video-v"><iframe src="https://player.vimeo.com/video/1178731273" allowfullscreen></iframe></div><p class="video-title">Reel Promocional</p></div>
+    <div class="vi-v"><div class="video-v"><iframe src="https://player.vimeo.com/video/1178731288" allowfullscreen></iframe></div><p class="video-title">Reel Lanzamiento</p></div>
+    <div class="vi-v"><div class="video-v"><iframe src="https://player.vimeo.com/video/1178731542" allowfullscreen></iframe></div><p class="video-title">Motion Graphics</p></div>
+    <div class="vi-v"><div class="video-v"><iframe src="https://player.vimeo.com/video/1178731831" allowfullscreen></iframe></div><p class="video-title">Recap Evento</p></div>
+    <div class="vi-h"><div class="video-h"><iframe src="https://player.vimeo.com/video/1178732560" allowfullscreen></iframe></div><p class="video-title">Video Lyric</p></div>
+    <div class="vi-v"><div class="video-v"><iframe src="https://player.vimeo.com/video/1178732872" allowfullscreen></iframe></div><p class="video-title">Contenido Viral</p></div>
+    <div class="vi-v"><div class="video-v"><iframe src="https://player.vimeo.com/video/1178733324" allowfullscreen></iframe></div><p class="video-title">Posicionamiento de Marca</p></div>
+    <div class="vi-v"><div class="video-v"><iframe src="https://player.vimeo.com/video/1178734486" allowfullscreen></iframe></div><p class="video-title">Flyer Animado</p></div>
+    <div class="vi-v"><div class="video-v"><iframe src="https://player.vimeo.com/video/1178734954" allowfullscreen></iframe></div><p class="video-title">Sostenimiento de Marca</p></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h3 class="premiere-titulo">PREMIERE PRO.<br>AFTER EFFECTS.</h3>
+  <p class="premiere-sub"><em>Edición multicapa, corrección de color, motion graphics y mezcla de audio.</em> Flujo de trabajo <strong>profesional y organizado.</strong></p>
+  <div class="premiere-box">
+    <div class="premiere-header"><div class="premiere-dot"></div><p>Adobe Premiere Pro 2026 — Secuencia multipista</p></div>
+    <img src="../Screenshot_1.png" alt="Timeline Premiere Pro" class="premiere-img">
+    <p class="premiere-caption">Edición multipista con 6 capas de video, 5 pistas de audio, efectos fx aplicados, subtítulos y sincronización musical.</p>
+  </div>
+
+  <div class="cta-box">
+    <h3>¿LISTO PARA TRABAJAR?</h3>
+    <p>Cuéntame qué tienes en mente.</p>
+    <a href="https://wa.link/1ikw5z" class="btn-green" target="_blank">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Hablar por WhatsApp
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 Juan Infante · <a href="https://jfinfante.video">jfinfante.video</a></p>
+  <img src="../LOGO_JUAN_INFANTE.svg" alt="Juan Infante">
+  <p>Medellín, Colombia</p>
+</footer>
+
+<script>
+  const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px';});
+  function animateRing(){rx+=(mx-rx)*0.1;ry+=(my-ry)*0.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animateRing);}
+  animateRing();
+  document.querySelectorAll('a,button').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{cursor.style.transform='translate(-50%,-50%) scale(2.5)';ring.style.width='54px';ring.style.height='54px';});
+    el.addEventListener('mouseleave',()=>{cursor.style.transform='translate(-50%,-50%) scale(1)';ring.style.width='34px';ring.style.height='34px';});
+  });
+</script>
+</body>
+</html>

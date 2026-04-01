@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://use.typekit.net/utj7jfa.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,800;1,300;1,800&display=swap" rel="stylesheet">
 <style>
-  :root{--black:#0a0a0a;--blue:#172DE2;--green:#25D366;--white:#ffffff;}
+  :root{--black:#0a0a0a;--blue:#172DE2;--green:#1aad52;--white:#ffffff;}
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{font-family:'Poppins',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;cursor:none;}
@@ -18,13 +18,13 @@
   .nav-links{display:flex;gap:36px;list-style:none;}
   .nav-links a{font-size:11px;font-weight:300;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.3s;}
   .nav-links a:hover{color:var(--white);}
-  .nav-cta{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--black);background:var(--green);padding:10px 22px;border-radius:3px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;}
+  .nav-cta{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--white);background:var(--green);padding:10px 22px;border-radius:3px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;}
   .nav-cta:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(37,211,102,0.4);}
 
-  .wrap{max-width:1100px;margin:0 auto;padding:120px 48px 80px;}
+  .wrap{max-width:1100px;margin:0 auto;padding:120px 48px 80px;text-align:center;}
   .divider{height:1px;background:rgba(255,255,255,0.06);margin:80px 0;}
   .section-title{font-family:'widescreen-ex',sans-serif;font-weight:900;font-size:clamp(36px,6vw,80px);line-height:0.92;letter-spacing:-3px;margin-bottom:24px;}
-  .section-body{font-size:15px;font-weight:300;color:rgba(255,255,255,0.5);max-width:640px;line-height:1.9;}
+  .section-body{font-size:15px;font-weight:300;color:rgba(255,255,255,0.5);max-width:640px;line-height:1.9;margin:0 auto;}
   .section-body strong{color:var(--white);font-weight:800;}
   .section-body em{font-style:italic;color:rgba(255,255,255,0.7);}
 
@@ -63,7 +63,7 @@
 
 
   /* HAMBURGER */
-  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:transparent;border:none;}
   .hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px;transition:all 0.3s;}
   .mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--black);z-index:99;flex-direction:column;justify-content:center;align-items:center;gap:32px;}
   .mobile-menu.open{display:flex;}
@@ -87,7 +87,7 @@
 <nav>
   <a href="/" class="nav-logo"><img src="../LOGO_JUAN_INFANTE.svg" alt="Juan Infante"></a>
   <ul class="nav-links">
-    <li><a href="/video">Video</a></li>
+    <li><a href="/miportafolio">Mi portafolio de video</a></li>
     <li><a href="/servicios">Servicios</a></li>
     <li><a href="/quiensoy">Quién soy</a></li>
     <li><a href="/contacto">Contacto</a></li>
@@ -102,7 +102,7 @@
 <div class="mobile-menu" id="mobileMenu">
   <button class="close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
   <a href="/" onclick="document.getElementById('mobileMenu').classList.remove('open')">Inicio</a>
-  <a href="/video" onclick="document.getElementById('mobileMenu').classList.remove('open')">Video</a>
+  <a href="/miportafolio" onclick="document.getElementById('mobileMenu').classList.remove('open')">Mi portafolio de video</a>
   <a href="/servicios" onclick="document.getElementById('mobileMenu').classList.remove('open')">Servicios</a>
   <a href="/quiensoy" onclick="document.getElementById('mobileMenu').classList.remove('open')">Quién soy</a>
   <a href="/contacto" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contacto</a>
@@ -182,7 +182,7 @@
 <footer>
   <p>© 2026 Juan Infante · <a href="https://jfinfante.video">jfinfante.video</a></p>
   <img src="../LOGO_JUAN_INFANTE.svg" alt="Juan Infante">
-  <p>La Ceja, Antioquia · Colombia</p>
+  <p>Medellín, Colombia</p>
 </footer>
 
 <script>

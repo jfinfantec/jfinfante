@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://use.typekit.net/utj7jfa.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,800;0,900;1,300&display=swap" rel="stylesheet">
 <style>
-  :root{--black:#0a0a0a;--blue:#172DE2;--green:#25D366;--white:#ffffff;}
+  :root{--black:#0a0a0a;--blue:#172DE2;--green:#1aad52;--white:#ffffff;}
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{font-family:'Poppins',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;cursor:none;}
@@ -18,14 +18,14 @@
   .nav-links{display:flex;gap:36px;list-style:none;}
   .nav-links a{font-size:11px;font-weight:300;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.3s;}
   .nav-links a:hover{color:var(--white);}
-  .nav-cta{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--black);background:var(--green);padding:10px 22px;border-radius:3px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;}
+  .nav-cta{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--white);background:var(--green);padding:10px 22px;border-radius:3px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;}
   .nav-cta:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(37,211,102,0.4);}
 
-  .wrap{max-width:860px;margin:0 auto;padding:120px 48px 80px;}
+  .wrap{max-width:860px;margin:0 auto;padding:120px 48px 80px;text-align:center;}
 
-  .page-title{font-family:'widescreen-ex',sans-serif;font-weight:900;font-size:clamp(52px,9vw,120px);line-height:0.9;letter-spacing:-4px;margin-bottom:80px;}
+  .page-logo{margin-bottom:80px;} .page-logo img{height:clamp(60px,10vw,120px);width:auto;filter:brightness(0) invert(1);}
 
-  .story-block{display:flex;gap:44px;align-items:flex-start;margin-bottom:60px;}
+  .story-block{display:flex;gap:44px;align-items:center;margin-bottom:60px;justify-content:center;}
   .story-block.reverse{flex-direction:row-reverse;}
   .story-memoji{height:130px;width:auto;flex-shrink:0;}
   .story-text{font-size:clamp(16px,1.9vw,20px);font-weight:300;color:rgba(255,255,255,0.75);line-height:1.85;}
@@ -36,7 +36,7 @@
   .solo-text strong{color:var(--white);font-weight:800;}
   .solo-text em{font-style:italic;}
 
-  .cierre-block{display:flex;gap:44px;align-items:center;margin-bottom:80px;}
+  .cierre-block{display:flex;gap:44px;align-items:center;margin-bottom:80px;justify-content:center;}
   .cierre-memoji{height:130px;width:auto;flex-shrink:0;}
   .cierre-text{font-family:'widescreen-ex',sans-serif;font-weight:900;font-size:clamp(22px,3vw,40px);line-height:1.05;letter-spacing:-1px;text-transform:uppercase;color:var(--white);}
 
@@ -48,14 +48,14 @@
   .marca-sub{font-size:10px;font-weight:300;color:rgba(255,255,255,0.35);margin-top:6px;font-style:italic;line-height:1.4;}
 
   .chips-titulo{font-size:10px;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:16px;}
-  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px;}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px;justify-content:center;}
   .chip{font-size:12px;font-weight:300;border:1px solid rgba(255,255,255,0.12);padding:8px 18px;border-radius:100px;color:rgba(255,255,255,0.5);transition:border-color 0.3s,color 0.3s;}
   .chip:hover{border-color:var(--blue);color:var(--white);}
 
-  .btns{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:16px;}
+  .btns{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:16px;justify-content:center;}
   .btn-cv{font-size:12px;font-weight:800;color:var(--white);background:transparent;border:1px solid rgba(255,255,255,0.2);padding:14px 24px;border-radius:3px;text-decoration:none;transition:border-color 0.3s;display:inline-flex;align-items:center;gap:8px;}
   .btn-cv:hover{border-color:var(--white);}
-  .btn-green{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--black);background:var(--green);padding:14px 32px;border-radius:3px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;display:inline-flex;align-items:center;gap:10px;}
+  .btn-green{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--white);background:var(--green);padding:14px 32px;border-radius:3px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;display:inline-flex;align-items:center;gap:10px;}
   .btn-green:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(37,211,102,0.4);}
 
   footer{padding:32px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.05);}
@@ -65,7 +65,7 @@
 
 
   /* HAMBURGER */
-  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:transparent;border:none;}
   .hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px;transition:all 0.3s;}
   .mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--black);z-index:99;flex-direction:column;justify-content:center;align-items:center;gap:32px;}
   .mobile-menu.open{display:flex;}
@@ -89,7 +89,7 @@
 <nav>
   <a href="/" class="nav-logo"><img src="../LOGO_JUAN_INFANTE.svg" alt="Juan Infante"></a>
   <ul class="nav-links">
-    <li><a href="/video">Video</a></li>
+    <li><a href="/miportafolio">Mi portafolio de video</a></li>
     <li><a href="/servicios">Servicios</a></li>
     <li><a href="/quiensoy">Quién soy</a></li>
     <li><a href="/contacto">Contacto</a></li>
@@ -104,7 +104,7 @@
 <div class="mobile-menu" id="mobileMenu">
   <button class="close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
   <a href="/" onclick="document.getElementById('mobileMenu').classList.remove('open')">Inicio</a>
-  <a href="/video" onclick="document.getElementById('mobileMenu').classList.remove('open')">Video</a>
+  <a href="/miportafolio" onclick="document.getElementById('mobileMenu').classList.remove('open')">Mi portafolio de video</a>
   <a href="/servicios" onclick="document.getElementById('mobileMenu').classList.remove('open')">Servicios</a>
   <a href="/quiensoy" onclick="document.getElementById('mobileMenu').classList.remove('open')">Quién soy</a>
   <a href="/contacto" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contacto</a>
@@ -113,7 +113,7 @@
 
 <div class="wrap">
 
-  <h1 class="page-title">JUAN<br>INFANTE.</h1>
+  <div class="page-logo"><img src="../LOGO_JUAN_INFANTE.svg" alt="Juan Infante"></div>
 
   <div class="story-block">
     <img src="../memoji-pensativo.webp" alt="" class="story-memoji">
@@ -175,7 +175,7 @@
 <footer>
   <p>© 2026 Juan Infante · <a href="https://jfinfante.video">jfinfante.video</a></p>
   <img src="../LOGO_JUAN_INFANTE.svg" alt="Juan Infante">
-  <p>La Ceja, Antioquia · Colombia</p>
+  <p>Medellín, Colombia</p>
 </footer>
 
 <script>
