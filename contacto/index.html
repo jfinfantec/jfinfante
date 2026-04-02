@@ -60,6 +60,32 @@
   }
 
   .nav-active{background:var(--white) !important;color:var(--black) !important;padding:6px 14px;border-radius:3px;font-weight:800 !important;}
+
+  @media(min-width:769px) and (max-width:1024px){
+    .contacto{padding:100px 32px 60px;}
+    .contacto-grid{max-width:500px;}
+  }
+
+  @media(max-width:900px) and (orientation:landscape){
+    nav{padding:12px 20px;}
+    .nav-logo img{height:24px;}
+    .hero{padding:80px 24px 40px;min-height:auto;}
+    .hero-logo img{height:60px;}
+    .hero-titulo{font-size:10px;}
+    .hero-sub{font-size:12px;margin-bottom:24px;}
+    .proyecto{padding:40px 24px;min-height:auto;}
+    .wrap{padding:80px 24px 40px;}
+    .section-title{font-size:clamp(24px,4vw,40px);}
+    .before-after{grid-template-columns:1fr 1.3fr;gap:12px;}
+    .videos-grid{grid-template-columns:repeat(3,1fr);}
+    .cred-grid{grid-template-columns:repeat(3,1fr);}
+    .story-block,.story-block.reverse{gap:20px;}
+    .story-memoji{height:80px;}
+    .cierre-block{gap:20px;}
+    .cierre-memoji{height:80px;}
+    .contacto{padding:80px 24px 40px;}
+    footer{padding:20px 24px;}
+  }
 </style>
 </head>
 <body>
@@ -101,7 +127,7 @@
     </a>
     <div class="contacto-item">
       <p class="contacto-tipo">Correo</p>
-      <p class="contacto-valor">juanfelipeinfantecarreno@gmail.com</p>
+      <p class="contacto-valor"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2c46594d424a4940455c4945424a4d4258494f4d5e5e4942436c4b414d4540024f4341">[email&#160;protected]</a></p>
     </div>
     <div class="contacto-item">
       <p class="contacto-tipo">Instagram</p>
@@ -118,8 +144,4 @@
 
 <footer>
   <p>© 2026 Juan Infante · <a href="https://jfinfante.video">jfinfante.video</a></p>
-  <img src="../LOGO_JUAN_INFANTE.svg" alt="Juan Infante">
-  <p>Medellín, Colombia</p>
-</footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decod
+  <img src="../LOGO_JUAN_INFANTE.svg" alt="Juan In

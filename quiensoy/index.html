@@ -38,7 +38,7 @@
 
   .cierre-block{display:flex;gap:44px;align-items:center;margin-bottom:80px;justify-content:center;}
   .cierre-memoji{height:130px;width:auto;flex-shrink:0;}
-  .cierre-text{color:var(--white);line-height:1.3;} .cierre-l1{display:block;font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(18px,2.5vw,32px);} .cierre-l2{display:block;font-family:'Poppins',sans-serif;font-weight:300;font-style:italic;font-size:clamp(18px,2.5vw,32px);} .cierre-l3{display:block;font-family:'widescreen-ex',sans-serif;font-weight:900;font-size:clamp(29px,4vw,52px);letter-spacing:-1px;margin-top:8px;}
+  .cierre-text{color:var(--white);line-height:1.3;} .cierre-l1{display:block;font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(18px,2.5vw,32px);} .cierre-l2{display:block;font-family:'Poppins',sans-serif;font-weight:100;font-style:italic;font-size:clamp(18px,2.5vw,32px);} .cierre-l3{display:block;font-family:'widescreen-ex',sans-serif;font-weight:900;font-size:clamp(29px,4vw,52px);letter-spacing:-1px;margin-top:8px;}
 
   /* MARCAS */
   .marcas-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;margin-bottom:64px;align-items:end;}
@@ -91,6 +91,37 @@
   .carousel-item{flex-shrink:0;height:60px;width:auto;opacity:1;transition:opacity 0.3s;border-radius:4px;}
   .carousel-item:hover{opacity:1;}
   @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  @media(min-width:769px) and (max-width:1024px){
+    .wrap{padding:100px 32px 60px;}
+    .story-block{gap:24px;}
+    .story-memoji{height:90px;}
+    .page-title{font-size:clamp(40px,7vw,80px);}
+    .cierre-block{gap:24px;}
+    .cierre-memoji{height:90px;}
+    .marcas-grid{grid-template-columns:repeat(3,1fr);}
+  }
+
+  @media(max-width:900px) and (orientation:landscape){
+    nav{padding:12px 20px;}
+    .nav-logo img{height:24px;}
+    .hero{padding:80px 24px 40px;min-height:auto;}
+    .hero-logo img{height:60px;}
+    .hero-titulo{font-size:10px;}
+    .hero-sub{font-size:12px;margin-bottom:24px;}
+    .proyecto{padding:40px 24px;min-height:auto;}
+    .wrap{padding:80px 24px 40px;}
+    .section-title{font-size:clamp(24px,4vw,40px);}
+    .before-after{grid-template-columns:1fr 1.3fr;gap:12px;}
+    .videos-grid{grid-template-columns:repeat(3,1fr);}
+    .cred-grid{grid-template-columns:repeat(3,1fr);}
+    .story-block,.story-block.reverse{gap:20px;}
+    .story-memoji{height:80px;}
+    .cierre-block{gap:20px;}
+    .cierre-memoji{height:80px;}
+    .contacto{padding:80px 24px 40px;}
+    footer{padding:20px 24px;}
+  }
 </style>
 </head>
 <body>
@@ -154,6 +185,7 @@
     <p class="cierre-text"><span class="cierre-l1">Hoy en día llevo años</span><span class="cierre-l2">contando historias de otras marcas</span><span class="cierre-l3">ESTA ES LA MÍA.</span></p>
   </div>
 
+  <p class="chips-titulo">Marcas que han confiado</p>
   <div class="carousel-wrap">
     <div class="carousel-track">
       <img src="../LOGOS-01.png" alt="" class="carousel-item">

@@ -73,6 +73,33 @@
   }
 
   .nav-active{background:var(--white) !important;color:var(--black) !important;padding:6px 14px;border-radius:3px;font-weight:800 !important;}
+
+  @media(min-width:769px) and (max-width:1024px){
+    .hero{padding:100px 32px 60px;}
+    .proyecto{padding:60px 32px;}
+    .hero-logo img{height:clamp(60px,10vw,100px);}
+  }
+
+  @media(max-width:900px) and (orientation:landscape){
+    nav{padding:12px 20px;}
+    .nav-logo img{height:24px;}
+    .hero{padding:80px 24px 40px;min-height:auto;}
+    .hero-logo img{height:60px;}
+    .hero-titulo{font-size:10px;}
+    .hero-sub{font-size:12px;margin-bottom:24px;}
+    .proyecto{padding:40px 24px;min-height:auto;}
+    .wrap{padding:80px 24px 40px;}
+    .section-title{font-size:clamp(24px,4vw,40px);}
+    .before-after{grid-template-columns:1fr 1.3fr;gap:12px;}
+    .videos-grid{grid-template-columns:repeat(3,1fr);}
+    .cred-grid{grid-template-columns:repeat(3,1fr);}
+    .story-block,.story-block.reverse{gap:20px;}
+    .story-memoji{height:80px;}
+    .cierre-block{gap:20px;}
+    .cierre-memoji{height:80px;}
+    .contacto{padding:80px 24px 40px;}
+    footer{padding:20px 24px;}
+  }
 </style>
 </head>
 <body>
