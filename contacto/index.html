@@ -58,6 +58,8 @@
     .contacto-grid{grid-template-columns:1fr;}
     footer{flex-direction:column;gap:16px;padding:28px 20px;text-align:center;}
   }
+
+  .nav-active{background:var(--white) !important;color:var(--black) !important;padding:6px 14px;border-radius:3px;font-weight:800 !important;}
 </style>
 </head>
 <body>
@@ -69,7 +71,7 @@
     <li><a href="/miportafolio">Mi portafolio de video</a></li>
     <li><a href="/servicios">Servicios</a></li>
     <li><a href="/quiensoy">Quién soy</a></li>
-    <li><a href="/contacto">Contacto</a></li>
+    <li><a href="/contacto" class="nav-active">Contacto</a></li>
   </ul>
   <a href="https://wa.link/1ikw5z" class="nav-cta nav-cta-desktop" target="_blank">💬 Hablemos</a>
   <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
@@ -95,12 +97,12 @@
   <div class="contacto-grid">
     <a href="https://wa.link/1ikw5z" class="contacto-item green" target="_blank">
       <p class="contacto-tipo">WhatsApp</p>
-      <p class="contacto-valor">💬 Escribir ahora</p>
+      <p class="contacto-valor">💬 Venga le cuento</p>
     </a>
-    <a href="/cdn-cgi/l/email-protection#204a55414e46454c495045494e46414e544543415252454e4f60474d41494c0e434f4d" class="contacto-item">
+    <div class="contacto-item">
       <p class="contacto-tipo">Correo</p>
-      <p class="contacto-valor"><span class="__cf_email__" data-cfemail="90fae5f1fef6f5fcf9e0f5f9fef6f1fee4f5f3f1e2e2f5feffd0f7fdf1f9fcbef3fffd">[email&#160;protected]</span></p>
-    </a>
+      <p class="contacto-valor">juanfelipeinfantecarreno@gmail.com</p>
+    </div>
     <div class="contacto-item">
       <p class="contacto-tipo">Instagram</p>
       <p class="contacto-valor" style="color:rgba(255,255,255,0.25);">Por agregar</p>
@@ -120,7 +122,4 @@
   <p>Medellín, Colombia</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
-  let mx=0,my=0,rx=0,ry=0;
-  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px';});
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decod
