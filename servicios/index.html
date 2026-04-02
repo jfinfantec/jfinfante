@@ -24,8 +24,8 @@
   .wrap{max-width:1100px;margin:0 auto;padding:120px 48px 80px;text-align:center;}
   .divider{height:1px;background:rgba(255,255,255,0.06);margin:80px 0;}
   .section-title{font-family:'widescreen-ex',sans-serif;font-weight:900;font-size:clamp(36px,6vw,80px);line-height:0.92;letter-spacing:-3px;margin-bottom:24px;}
-  .section-body{font-size:15px;font-weight:300;color:rgba(255,255,255,0.5);max-width:640px;line-height:1.9;margin:0 auto;}
-  .section-body strong{color:var(--white);font-weight:800;}
+  .section-body{font-size:15px;font-weight:300;color:var(--white);max-width:640px;line-height:1.9;margin:0 auto;}
+  .section-body strong{color:var(--white);font-weight:800;text-transform:uppercase;}
   .section-body em{font-style:italic;color:rgba(255,255,255,0.7);}
 
   .video-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px;}
@@ -46,15 +46,15 @@
   .servicios-lista{margin-top:40px;display:flex;flex-direction:column;}
   .servicio-item{padding:24px 0;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:flex-start;gap:20px;}
   .servicio-arrow{color:var(--blue);font-weight:800;font-size:20px;flex-shrink:0;}
-  .servicio-texto{font-size:16px;font-weight:300;color:rgba(255,255,255,0.7);line-height:1.6;}
+  .servicio-texto{font-size:16px;font-weight:300;color:var(--white);line-height:1.6;}
   .servicio-texto strong{color:var(--white);font-weight:800;}
 
   .proceso-lista{margin-top:40px;display:flex;flex-direction:column;max-width:640px;}
   .proceso-item{display:flex;gap:24px;padding-bottom:32px;position:relative;}
   .proceso-item:not(:last-child)::before{content:'';position:absolute;left:19px;top:44px;width:2px;height:calc(100% - 44px);background:rgba(23,45,226,0.2);}
   .proceso-num{width:40px;height:40px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0;}
-  .proceso-content p{font-size:15px;font-weight:300;color:rgba(255,255,255,0.6);line-height:1.7;margin-top:10px;}
-  .proceso-content p strong{color:var(--white);font-weight:800;}
+  .proceso-content p{font-size:15px;font-weight:300;color:var(--white);line-height:1.7;margin-top:10px;}
+  .proceso-content p strong{color:var(--white);font-weight:800;text-transform:uppercase;}
 
   footer{padding:32px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.05);}
   footer p{font-size:11px;font-weight:300;color:rgba(255,255,255,0.2);}
@@ -110,6 +110,20 @@
     .contacto{padding:80px 24px 40px;}
     footer{padding:20px 24px;}
   }
+
+  /* BURBUJAS AZULES */
+  .burbuja{background:var(--blue);border-radius:20px;padding:28px 36px;margin:20px auto;max-width:640px;color:var(--white);text-align:center;}
+  .burbuja p{color:var(--white);font-size:15px;font-weight:300;line-height:1.8;}
+  .burbuja strong{color:var(--white);font-weight:800;text-transform:uppercase;}
+  .burbuja em{font-style:italic;}
+  .burbuja-title{font-family:'widescreen-ex',sans-serif;font-weight:900;font-size:clamp(18px,2.5vw,30px);color:var(--white);letter-spacing:-1px;}
+  .burbuja-aurea{font-family:'widescreen-ex',sans-serif;font-weight:900;font-size:clamp(16px,2vw,24px);color:var(--white);letter-spacing:-0.5px;}
+
+  /* CÓMO ES - dos líneas */
+  .como-es-wrap{text-align:center;margin-bottom:24px;}
+  .como-es-l1{display:block;font-family:'widescreen-ex',sans-serif;font-weight:900;font-size:clamp(40px,7vw,90px);line-height:0.92;letter-spacing:-3px;color:var(--white);}
+  .como-es-l2-wrap{display:inline-block;}
+  .proceso-claro{font-size:clamp(20px,2vw,24px);font-weight:800;text-transform:uppercase;color:var(--white);text-align:center;margin:24px auto 32px;max-width:640px;}
 </style>
 </head>
 <body>
@@ -143,7 +157,13 @@
 <div class="wrap">
 
   <h1 class="section-title">¿QUÉ HAGO?</h1>
-  <p class="section-body">Trabajo con marcas y negocios que necesitan <strong>ordenar su comunicación</strong> y convertirla en una herramienta comercial.<br><br>Mi trabajo parte de entender el negocio y la estrategia, para luego ejecutar <strong>contenido audiovisual y diseño con criterio narrativo, técnico y comercial.</strong><br><br><em>Cada pieza se piensa para cumplir un objetivo concreto: atraer, comunicar y convertir.</em></p>
+  <p class="section-body">Trabajo con marcas y negocios <strong>QUE NECESITAN ORDENAR SU COMUNICACIÓN Y CONVERTIRLA EN UNA HERRAMIENTA COMERCIAL.</strong></p>
+
+  <div class="burbuja">
+    <p>Mi trabajo parte de entender el negocio y la estrategia, <strong>PARA LUEGO EJECUTAR CONTENIDO AUDIOVISUAL Y DISEÑO CON CRITERIO NARRATIVO, TÉCNICO Y COMERCIAL.</strong></p>
+  </div>
+
+  <p class="section-body">Cada pieza se piensa para cumplir un objetivo concreto: <strong>ATRAER, COMUNICAR Y CONVERTIR.</strong></p>
 <div style="text-align:center;margin-top:40px;">
     <a href="https://wa.link/1ikw5z" style="font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--white);background:var(--green);padding:14px 32px;border-radius:3px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;" target="_blank">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
@@ -154,8 +174,10 @@
   <div class="divider"></div>
 
   <h2 class="section-title">VIDEO</h2>
-  <p style="font-family:'widescreen-ex',sans-serif;font-weight:900;font-size:clamp(18px,2.5vw,30px);color:var(--blue);letter-spacing:-1px;margin-bottom:16px;">REELS · TIKTOK · SHORTS</p>
-  <p class="section-body">Producción y edición de video pensada para <strong>comunicar claro, sostener atención y posicionar marca.</strong></p>
+  <div class="burbuja">
+    <p class="burbuja-title">REELS · TIKTOK · SHORTS</p>
+  </div>
+  <p class="section-body">Producción y edición de video pensada para <strong>COMUNICAR CLARO, SOSTENER ATENCIÓN Y POSICIONAR MARCA.</strong></p>
   <div class="video-grid-4">
     <div><div class="video-v"><iframe src="https://player.vimeo.com/video/1178731288" allowfullscreen></iframe></div><p class="video-title">Reel Lanzamiento</p></div>
     <div><div class="video-v"><iframe src="https://player.vimeo.com/video/1178730647" allowfullscreen></iframe></div><p class="video-title">Reel Evento</p></div>
@@ -166,7 +188,9 @@
   <div class="divider"></div>
 
   <h2 class="section-title">FOTOGRAFÍA</h2>
-  <p class="section-body">Pensada para <strong>comunicación digital, identidad visual y uso comercial.</strong></p>
+  <div class="burbuja">
+    <p>Pensada para <strong>COMUNICACIÓN DIGITAL, IDENTIDAD VISUAL Y USO COMERCIAL.</strong></p>
+  </div>
   <div class="foto-grid">
     <div class="foto-item"><img src="../foto (1).jpg" alt=""></div>
     <div class="foto-item"><img src="../foto (2).jpg" alt=""></div>
@@ -181,7 +205,9 @@
   <div class="divider"></div>
 
   <h2 class="section-title">DISEÑO<br>GRÁFICO</h2>
-  <p class="section-body">Aplicado a <strong>redes sociales y comunicación de marca.</strong></p>
+  <div class="burbuja">
+    <p>Aplicado a <strong>REDES SOCIALES Y COMUNICACIÓN DE MARCA.</strong></p>
+  </div>
   <div class="diseno-grid">
     <div class="diseno-item"><img src="../5.jpg" alt=""></div>
     <div class="diseno-item"><img src="../16-mayo.jpg" alt=""></div>
@@ -193,19 +219,24 @@
 
   <div class="divider"></div>
 
-  <h2 class="section-title">SERVICIOS</h2>
+  <h2 class="section-title" style="background:var(--blue);border-radius:20px;padding:20px 36px;display:inline-block;">SERVICIOS</h2>
   <div class="servicios-lista">
     <div class="servicio-item"><span class="servicio-arrow">→</span><p class="servicio-texto">Producción de <strong>CONTENIDO AUDIOVISUAL</strong> para redes sociales.</p></div>
     <div class="servicio-item"><span class="servicio-arrow">→</span><p class="servicio-texto"><strong>FOTOGRAFÍA PROFESIONAL</strong> de producto, marca y eventos.</p></div>
     <div class="servicio-item"><span class="servicio-arrow">→</span><p class="servicio-texto">Diseño gráfico para <strong>COMUNICACIÓN DIGITAL.</strong></p></div>
-    <div class="servicio-item"><span class="servicio-arrow">→</span><p class="servicio-texto"><em>Estrategia de contenido y planificación mensual.</em></p></div>
+    <div class="servicio-item"><span class="servicio-arrow">→</span><p class="servicio-texto" style="font-weight:800;font-style:italic;text-transform:uppercase;">ESTRATEGIA DE CONTENIDO Y PLANIFICACIÓN MENSUAL.</p></div>
     <div class="servicio-item"><span class="servicio-arrow">→</span><p class="servicio-texto"><strong>PRE-PRODUCCIÓN, PRODUCCIÓN Y POST-PRODUCCIÓN</strong> profesional de video.</p></div>
   </div>
 
   <div class="divider"></div>
 
-  <h2 class="section-title">CÓMO ES<br>TRABAJAR<br>CONMIGO</h2>
-  <p class="section-body"><strong>El proceso es claro y ordenado.</strong></p>
+  <div class="como-es-wrap">
+    <span class="como-es-l1">CÓMO ES</span>
+    <div class="burbuja como-es-l2-wrap" style="display:inline-block;margin:12px auto;">
+      <p class="burbuja-aurea">TRABAJAR CONMIGO</p>
+    </div>
+  </div>
+  <p class="proceso-claro">EL PROCESO ES CLARO Y ORDENADO.</p>
   <div class="proceso-lista">
     <div class="proceso-item"><div class="proceso-num">1</div><div class="proceso-content"><p>Primero se define <strong>EL OBJETIVO Y EL MENSAJE.</strong></p></div></div>
     <div class="proceso-item"><div class="proceso-num">2</div><div class="proceso-content"><p>Luego <strong>SE ESTRUCTURA LA IDEA</strong> y el formato adecuado.</p></div></div>
