@@ -43,13 +43,13 @@
   .diseno-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s;}
   .diseno-item:hover img{transform:scale(1.05);}
 
-  .servicios-lista{margin-top:40px;display:flex;flex-direction:column;}
-  .servicio-item{padding:24px 0;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:flex-start;gap:20px;}
-  .servicio-arrow{color:var(--blue);font-weight:800;font-size:20px;flex-shrink:0;}
+  .servicios-lista{margin:40px auto 0;display:flex;flex-direction:column;max-width:520px;width:100%;text-align:left;}
+  .servicio-item{padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:16px;}
+  .servicio-arrow{width:40px;height:40px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;flex-shrink:0;color:var(--white);font-family:'Poppins',sans-serif;}
   .servicio-texto{font-size:16px;font-weight:300;color:var(--white);line-height:1.6;}
   .servicio-texto strong{color:var(--white);font-weight:800;}
 
-  .proceso-lista{margin-top:40px;display:flex;flex-direction:column;max-width:640px;}
+  .proceso-lista{margin:40px auto 0;display:flex;flex-direction:column;max-width:520px;width:100%;text-align:left;}
   .proceso-item{display:flex;gap:24px;padding-bottom:32px;position:relative;}
   .proceso-item:not(:last-child)::before{content:'';position:absolute;left:19px;top:44px;width:2px;height:calc(100% - 44px);background:rgba(23,45,226,0.2);}
   .proceso-num{width:40px;height:40px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0;}
@@ -71,10 +71,12 @@
   .mobile-menu .close{position:absolute;top:24px;right:24px;font-size:28px;cursor:pointer;color:var(--white);background:none;border:none;font-family:'Poppins',sans-serif;}
 
   /* BURBUJAS AZULES */
-  .burbuja{background:var(--blue);border-radius:12px;padding:16px 28px;margin:8px auto;max-width:640px;color:var(--white);text-align:center;}
+  .burbuja{background:var(--blue);border-radius:12px;padding:16px 28px;margin:8px auto;max-width:640px;width:100%;color:var(--white);text-align:center;display:block;}
+  .burbuja-inline{width:auto;max-width:none;display:inline-block;}
   .burbuja p{color:var(--white);font-size:15px;font-weight:300;line-height:1.8;} .burbuja p.burbuja-title{font-size:clamp(22px,3.5vw,37px);font-weight:900;line-height:0.92;letter-spacing:-1px;white-space:nowrap;} .burbuja p.burbuja-aurea{font-size:clamp(22px,3.5vw,37px);font-weight:900;line-height:0.92;letter-spacing:-1px;white-space:nowrap;}
   .burbuja strong{color:var(--white);font-weight:800;text-transform:uppercase;}
   .burbuja em{font-style:italic;}
+  .burbuja-body{width:100%;max-width:640px;}
   .burbuja-title{font-family:'widescreen-ex',sans-serif;font-weight:900;font-size:clamp(32px,5vw,60px);line-height:0.92;letter-spacing:-3px;color:var(--white);}
   .burbuja-aurea{font-family:'widescreen-ex',sans-serif;font-weight:900;font-size:clamp(32px,5vw,60px);line-height:0.92;letter-spacing:-3px;color:var(--white);}
 
@@ -82,7 +84,7 @@
   .como-es-wrap{text-align:center;margin-bottom:24px;}
   .como-es-l1{display:block;font-family:'widescreen-ex',sans-serif;font-weight:900;font-size:clamp(64px,10vw,120px);line-height:0.92;letter-spacing:-3px;color:var(--white);}
   .como-es-l2-wrap{display:inline-block;}
-  .proceso-claro{font-size:clamp(20px,2vw,24px);font-weight:800;text-transform:uppercase;color:var(--white);text-align:center;margin:24px auto 32px;max-width:640px;}
+  .proceso-claro{font-size:clamp(14px,4vw,24px);font-weight:800;text-transform:uppercase;color:var(--white);text-align:center;margin:24px auto 32px;max-width:640px;white-space:nowrap;}
 
   /* DISEÑO GRÁFICO en una línea en desktop */
   .titulo-diseno{white-space:nowrap;display:block;text-align:center;width:100%;}
@@ -93,12 +95,14 @@
   @media(max-width:768px){
     nav{padding:18px 20px;} .nav-links{display:none;} .nav-cta-desktop{display:none;} .hamburger{display:flex;}
     .wrap{padding:100px 20px 60px;}
-    .burbuja p.burbuja-title{font-size:clamp(22px,3.5vw,37px);}
-    .burbuja p.burbuja-aurea{font-size:clamp(22px,3.5vw,37px);}
+    .burbuja p.burbuja-title{font-size:clamp(14px,4.5vw,22px) !important;}
+    .burbuja p.burbuja-aurea{font-size:clamp(14px,4.5vw,22px) !important;}
+    .burbuja-inline{max-width:calc(100vw - 40px);}
     .como-es-l1{font-size:clamp(40px,8vw,64px);}
     .burbuja-title{font-size:clamp(24px,4vw,40px);}
     .burbuja-aurea{font-size:clamp(24px,4vw,40px);}
     .section-title{font-size:clamp(40px,8vw,64px);}
+    .titulo-movil-md{font-size:clamp(32px,7vw,64px) !important;max-width:100%;box-sizing:border-box;}
     .titulo-diseno{white-space:normal;}
     .video-grid-4{grid-template-columns:repeat(2,1fr);}
     .foto-grid{grid-template-columns:repeat(2,1fr);}
@@ -165,7 +169,7 @@
   <h1 class="section-title">¿QUÉ HAGO?</h1>
   <p class="section-body">Trabajo con marcas y negocios <strong>QUE NECESITAN ORDENAR SU COMUNICACIÓN Y CONVERTIRLA EN UNA HERRAMIENTA COMERCIAL.</strong></p>
 
-  <div class="burbuja">
+  <div class="burbuja" style="width:100%;max-width:640px;">
     <p>Mi trabajo parte de entender el negocio y la estrategia, <strong>PARA LUEGO EJECUTAR CONTENIDO AUDIOVISUAL Y DISEÑO CON CRITERIO NARRATIVO, TÉCNICO Y COMERCIAL.</strong></p>
   </div>
 
@@ -180,8 +184,10 @@
   <div class="divider"></div>
 
   <h2 class="section-title">VIDEO</h2>
-  <div class="burbuja" style="display:inline-block;max-width:none;">
-    <p class="burbuja-title">REELS · TIKTOK · SHORTS</p>
+  <div style="text-align:center;width:100%;">
+    <div class="burbuja burbuja-inline">
+      <p class="burbuja-title">REELS · TIKTOK · SHORTS</p>
+    </div>
   </div>
   <p class="section-body">Producción y edición de video pensada para <strong>COMUNICAR CLARO, SOSTENER ATENCIÓN Y POSICIONAR MARCA.</strong></p>
   <div class="video-grid-4">
@@ -193,8 +199,8 @@
 
   <div class="divider"></div>
 
-  <h2 class="section-title">FOT<span class="uex">O</span>GRAFÍA</h2>
-  <div class="burbuja">
+  <h2 class="section-title titulo-movil-md">FOT<span class="uex">O</span>GRAFÍA</h2>
+  <div class="burbuja" style="width:100%;max-width:640px;">
     <p>Pensada para <strong>COMUNICACIÓN DIGITAL, IDENTIDAD VISUAL Y USO COMERCIAL.</strong></p>
   </div>
   <div class="foto-grid">
@@ -210,8 +216,8 @@
 
   <div class="divider"></div>
 
-  <h2 class="section-title" style="font-size:clamp(28px,7vw,80px);text-align:center;">DISEÑO GRÁFICO</h2>
-  <div class="burbuja">
+  <h2 class="section-title" style="font-size:clamp(36px,8vw,80px);text-align:center;">DISEÑO GRÁFICO</h2>
+  <div class="burbuja" style="width:100%;max-width:640px;">
     <p>Aplicado a <strong>REDES SOCIALES Y COMUNICACIÓN DE MARCA.</strong></p>
   </div>
   <div class="diseno-grid">
@@ -225,21 +231,23 @@
 
   <div class="divider"></div>
 
-  <h2 class="section-title" style="background:var(--blue);border-radius:20px;padding:20px 36px;display:inline-block;">SERVICI<span class="uex">O</span>S</h2>
+  <h2 class="section-title titulo-movil-md" style="background:var(--blue);border-radius:20px;padding:20px 36px;display:inline-block;">SERVICI<span class="uex">O</span>S</h2>
   <div class="servicios-lista">
-    <div class="servicio-item"><span class="servicio-arrow">→</span><p class="servicio-texto">Producción de <strong>CONTENIDO AUDIOVISUAL</strong> para redes sociales.</p></div>
-    <div class="servicio-item"><span class="servicio-arrow">→</span><p class="servicio-texto"><strong>FOTOGRAFÍA PROFESIONAL</strong> de producto, marca y eventos.</p></div>
-    <div class="servicio-item"><span class="servicio-arrow">→</span><p class="servicio-texto">Diseño gráfico para <strong>COMUNICACIÓN DIGITAL.</strong></p></div>
-    <div class="servicio-item"><span class="servicio-arrow">→</span><p class="servicio-texto" style="font-weight:800;font-style:italic;text-transform:uppercase;">ESTRATEGIA DE CONTENIDO Y PLANIFICACIÓN MENSUAL.</p></div>
-    <div class="servicio-item"><span class="servicio-arrow">→</span><p class="servicio-texto"><strong>PRE-PRODUCCIÓN, PRODUCCIÓN Y POST-PRODUCCIÓN</strong> profesional de video.</p></div>
+    <div class="servicio-item"><div class="servicio-arrow">&#9658;</div><p class="servicio-texto">Producción de <strong>CONTENIDO AUDIOVISUAL</strong> para redes sociales.</p></div>
+    <div class="servicio-item"><div class="servicio-arrow">&#9658;</div><p class="servicio-texto"><strong>FOTOGRAFÍA PROFESIONAL</strong> de producto, marca y eventos.</p></div>
+    <div class="servicio-item"><div class="servicio-arrow">&#9658;</div><p class="servicio-texto">Diseño gráfico para <strong>COMUNICACIÓN DIGITAL.</strong></p></div>
+    <div class="servicio-item"><div class="servicio-arrow">&#9658;</div><p class="servicio-texto" style="font-weight:800;font-style:italic;text-transform:uppercase;">ESTRATEGIA DE CONTENIDO Y PLANIFICACIÓN MENSUAL.</p></div>
+    <div class="servicio-item"><div class="servicio-arrow">&#9658;</div><p class="servicio-texto"><strong>PRE-PRODUCCIÓN, PRODUCCIÓN Y POST-PRODUCCIÓN</strong> profesional de video.</p></div>
   </div>
 
   <div class="divider"></div>
 
   <div class="como-es-wrap">
     <span class="como-es-l1">CÓMO ES</span>
-    <div class="burbuja como-es-l2-wrap" style="display:inline-block;max-width:none;margin:12px auto;">
-      <p class="burbuja-aurea">TRABAJAR C<span class="uex">O</span>NMIGO</p>
+    <div style="text-align:center;width:100%;">
+      <div class="burbuja burbuja-inline como-es-l2-wrap" style="margin:8px 0;">
+        <p class="burbuja-aurea">TRABAJAR C<span class="uex">O</span>NMIGO</p>
+      </div>
     </div>
   </div>
   <p class="proceso-claro">EL PROCESO ES CLARO Y ORDENADO.</p>
