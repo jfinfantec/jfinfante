@@ -11,6 +11,8 @@
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{font-family:'Poppins',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;cursor:none;}
+
+  @font-face{font-family:'ransom-note';src:url('../rans____.ttf') format('truetype');font-weight:normal;font-style:normal;}
   .cursor{width:10px;height:10px;background:var(--blue);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform 0.15s ease;}
   .cursor-ring{width:34px;height:34px;border:1px solid rgba(23,45,226,0.5);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width 0.3s,height 0.3s;}
   nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);background:rgba(10,10,10,0.85);border-bottom:1px solid rgba(255,255,255,0.05);}
@@ -91,6 +93,14 @@
 
   /* UEX letra */
   .uex{font-family:'widescreen-uex',sans-serif;font-weight:900;font-style:normal;}
+
+  /* TÍTULO MIXTO DISEÑO GRÁFICO */
+  .titulo-diseno-wrap{text-align:center;margin-bottom:8px;line-height:1;}
+  .titulo-diseno-l1{display:block;line-height:1.1;}
+  .titulo-diseno-l2{display:block;font-family:'ransom-note',sans-serif;font-weight:normal;font-size:clamp(28px,6vw,68px);text-transform:uppercase;letter-spacing:2px;line-height:1.1;}
+  .letra-sloop{font-family:'sloop-script-three',sans-serif;font-weight:400;font-style:normal;font-size:clamp(42px,9vw,102px);}
+  .letra-ex{font-family:'widescreen-ex',sans-serif;font-weight:900;font-size:clamp(28px,6vw,68px);}
+  .letra-uex{font-family:'widescreen-uex',sans-serif;font-weight:900;font-size:clamp(28px,6vw,68px);}
 
   @media(max-width:768px){
     nav{padding:18px 20px;} .nav-links{display:none;} .nav-cta-desktop{display:none;} .hamburger{display:flex;}
@@ -216,7 +226,10 @@
 
   <div class="divider"></div>
 
-  <h2 class="section-title" style="font-size:clamp(36px,8vw,80px);text-align:center;">DISEÑO GRÁFICO</h2>
+  <div class="titulo-diseno-wrap">
+    <span class="titulo-diseno-l1"><span class="letra-sloop">D</span><span class="letra-ex">ISEÑ</span><span class="letra-uex">O</span></span>
+    <span class="titulo-diseno-l2">GRÁFICO</span>
+  </div>
   <div class="burbuja" style="width:100%;max-width:640px;">
     <p>Aplicado a <strong>REDES SOCIALES Y COMUNICACIÓN DE MARCA.</strong></p>
   </div>
