@@ -2,12 +2,13 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0a0a0a">
   <title>Agenda tu jornada de grabación | Juan Infante</title>
 
   <link rel="stylesheet" href="https://use.typekit.net/utj7jfa.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;0,800;1,300;1,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -15,28 +16,33 @@
       --blue:#172DE2;
       --blue-readable:#6675FF;
       --white:#ffffff;
-      --muted:rgba(255,255,255,.56);
-      --muted2:rgba(255,255,255,.34);
-      --line:rgba(255,255,255,.08);
+      --muted:rgba(255,255,255,.62);
+      --muted-soft:rgba(255,255,255,.42);
+      --muted-faint:rgba(255,255,255,.26);
+      --line:rgba(255,255,255,.09);
       --panel:rgba(255,255,255,.025);
-      --panel-blue:rgba(23,45,226,.06);
+      --panel-blue:rgba(23,45,226,.065);
+      --whatsapp:#19b95b;
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
-
-    html{background:var(--black)}
+    html{background:var(--black);scroll-behavior:smooth}
 
     body{
       min-height:100vh;
       overflow-x:hidden;
       background:
-        radial-gradient(ellipse 72% 42% at 12% 7%,rgba(23,45,226,.17) 0%,rgba(23,45,226,.055) 35%,transparent 69%),
-        radial-gradient(ellipse 45% 30% at 92% 23%,rgba(23,45,226,.07) 0%,transparent 72%),
+        radial-gradient(ellipse 78% 42% at 12% 6%,rgba(23,45,226,.18) 0%,rgba(23,45,226,.055) 37%,transparent 69%),
+        radial-gradient(ellipse 46% 32% at 92% 24%,rgba(23,45,226,.075) 0%,transparent 72%),
         var(--black);
       color:var(--white);
       font-family:'Poppins',Arial,sans-serif;
       -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
     }
+
+    a{color:inherit}
+    button,summary{font:inherit}
 
     .page{
       width:min(1180px,calc(100% - 40px));
@@ -57,13 +63,10 @@
       display:inline-flex;
       align-items:center;
       text-decoration:none;
-      cursor:pointer;
       transition:opacity .2s ease;
     }
 
-    .brand-home:hover{
-      opacity:.72;
-    }
+    .brand-home:hover{opacity:.72}
 
     .brand img{
       display:block;
@@ -82,10 +85,9 @@
     }
 
     .hero{
-      position:relative;
-      max-width:980px;
+      max-width:1000px;
       margin:0 auto;
-      padding:72px 0 56px;
+      padding:74px 0 58px;
       text-align:center;
     }
 
@@ -98,15 +100,19 @@
       text-transform:uppercase;
     }
 
-    h1{
-      max-width:980px;
-      margin:0 auto 27px;
+    h1,
+    .display{
       font-family:'widescreen-ex','Arial Black',Impact,sans-serif;
-      font-size:clamp(48px,7vw,94px);
       font-weight:900;
+      text-transform:uppercase;
+    }
+
+    h1{
+      max-width:1000px;
+      margin:0 auto 28px;
+      font-size:clamp(48px,7vw,94px);
       line-height:.88;
       letter-spacing:-.055em;
-      text-transform:uppercase;
     }
 
     h1 .blue{color:var(--blue)}
@@ -117,19 +123,19 @@
       color:var(--muted);
       font-size:clamp(14px,1.3vw,17px);
       font-weight:300;
-      line-height:1.75;
+      line-height:1.76;
     }
 
     .intro strong{color:var(--white);font-weight:800}
 
     .section{
-      padding:54px 0;
+      padding:56px 0;
       border-top:1px solid var(--line);
     }
 
     .section-head{
-      max-width:900px;
-      margin:0 auto 32px;
+      max-width:920px;
+      margin:0 auto 34px;
       text-align:center;
     }
 
@@ -139,21 +145,33 @@
       font-family:'widescreen-ex','Arial Black',Impact,sans-serif;
       font-size:18px;
       font-weight:900;
-      letter-spacing:-.02em;
     }
 
     .section-title{
-      max-width:800px;
+      max-width:860px;
       margin:0 auto;
       font-family:'widescreen-ex','Arial Black',Impact,sans-serif;
-      font-size:clamp(28px,3.7vw,48px);
+      font-size:clamp(28px,3.7vw,49px);
       font-weight:900;
       line-height:.95;
       letter-spacing:-.04em;
       text-transform:uppercase;
     }
 
-    .service-grid{
+    .section-copy{
+      max-width:770px;
+      margin:16px auto 0;
+      color:var(--muted);
+      font-size:13px;
+      font-weight:300;
+      line-height:1.75;
+      text-align:center;
+    }
+
+    .section-copy strong{color:var(--white);font-weight:800}
+
+    /* RESUMEN */
+    .quick-grid{
       display:grid;
       grid-template-columns:repeat(4,1fr);
       max-width:1100px;
@@ -162,136 +180,264 @@
       border-left:1px solid var(--line);
     }
 
-    .service-item{
-      min-height:132px;
-      padding:20px 18px;
+    .quick-item{
+      min-height:138px;
+      padding:21px 19px;
       border-right:1px solid var(--line);
       border-bottom:1px solid var(--line);
       background:var(--panel);
     }
 
-    .service-item.accent{
-      background:linear-gradient(180deg, rgba(23,45,226,.09) 0%, rgba(23,45,226,.03) 100%);
+    .quick-item.accent{
       position:relative;
+      background:linear-gradient(180deg,rgba(23,45,226,.10),rgba(23,45,226,.025));
     }
 
-    .service-item.accent::before{
+    .quick-item.accent::before{
       content:"";
       position:absolute;
-      left:0;
-      top:0;
-      width:100%;
+      inset:0 0 auto 0;
       height:2px;
       background:var(--blue);
     }
 
-    .service-label{
-      margin-bottom:9px;
-      color:var(--muted2);
-      font-size:8px;
-      font-weight:800;
-      letter-spacing:.17em;
-      text-transform:uppercase;
-    }
-
-    .service-value{
-      color:var(--white);
-      font-size:14px;
-      font-weight:800;
-      line-height:1.45;
-    }
-
-    .service-value.blue{color:var(--blue-readable)}
-
-    .commercial{
-      max-width:1100px;
-      margin:14px auto 0;
-      padding:22px 22px;
-      border:1px solid rgba(23,45,226,.28);
-      background:linear-gradient(180deg, rgba(23,45,226,.08) 0%, rgba(255,255,255,.02) 100%);
-      display:grid;
-      grid-template-columns:minmax(230px,.75fr) minmax(300px,1.25fr);
-      align-items:center;
-      gap:34px;
-    }
-
-    .commercial-label{
-      display:block;
-      margin-bottom:7px;
-      color:var(--muted2) !important;
-      font-size:8px !important;
-      font-weight:800;
-      letter-spacing:.17em;
-      text-transform:uppercase;
-    }
-
-    .commercial-price{
-      font-family:'widescreen-ex','Arial Black',Impact,sans-serif;
+    .quick-number{
+      margin-bottom:10px;
       color:var(--blue-readable);
-      font-size:clamp(28px,3.2vw,44px);
+      font-family:'widescreen-ex','Arial Black',Impact,sans-serif;
+      font-size:clamp(24px,2.3vw,34px);
       font-weight:900;
       line-height:1;
-      letter-spacing:-.04em;
+      letter-spacing:-.035em;
     }
 
-    .commercial-price::after{
+    .quick-label{
+      color:var(--white);
+      font-size:11px;
+      font-weight:800;
+      line-height:1.45;
+      text-transform:uppercase;
+      letter-spacing:.055em;
+    }
+
+    .quick-note{
+      margin-top:7px;
+      color:var(--muted-soft);
+      font-size:10px;
+      line-height:1.55;
+    }
+
+    /* QUÉ RESERVAS */
+    .definition-card{
+      display:grid;
+      grid-template-columns:minmax(230px,.8fr) minmax(300px,1.2fr);
+      gap:34px;
+      align-items:center;
+      max-width:1040px;
+      margin:0 auto;
+      padding:28px;
+      border:1px solid rgba(23,45,226,.28);
+      background:linear-gradient(180deg,rgba(23,45,226,.075),rgba(255,255,255,.018));
+    }
+
+    .definition-title{
+      color:var(--blue-readable);
+      font-family:'widescreen-ex','Arial Black',Impact,sans-serif;
+      font-size:clamp(27px,3vw,42px);
+      font-weight:900;
+      line-height:.95;
+      letter-spacing:-.04em;
+      text-transform:uppercase;
+    }
+
+    .definition-title::after{
       content:"";
       display:block;
       width:78px;
       height:3px;
-      margin-top:12px;
+      margin-top:13px;
       background:var(--blue);
     }
 
-    .commercial-copy{
+    .definition-copy{
+      padding-left:29px;
       border-left:1px solid var(--line);
-      padding-left:28px;
+      color:var(--muted);
+      font-size:12.5px;
+      font-weight:300;
+      line-height:1.72;
     }
 
-    .commercial span{
-      display:block;
+    .definition-copy strong{color:var(--white);font-weight:800}
+
+    /* CONDICIONES */
+    .conditions{
+      max-width:990px;
+      margin:0 auto;
+      padding:32px 34px;
+      border:1px solid rgba(23,45,226,.28);
+      background:linear-gradient(180deg,rgba(23,45,226,.075),rgba(255,255,255,.015));
+    }
+
+    .conditions-kicker{
+      margin-bottom:20px;
+      color:var(--blue-readable);
+      font-size:8px;
+      font-weight:800;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+    }
+
+    .conditions p{
+      max-width:880px;
+      margin:0 auto 15px;
+      color:var(--muted);
+      font-size:13px;
+      font-weight:300;
+      line-height:1.78;
+    }
+
+    .conditions p:first-of-type{
+      color:var(--white);
+      font-size:15px;
+      font-weight:500;
+    }
+
+    .conditions p:last-child{margin-bottom:0}
+    .conditions strong{color:var(--white);font-weight:800}
+
+    /* TARIFAS */
+    .pricing-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:10px;
+      max-width:1100px;
+      margin:0 auto;
+    }
+
+    .price-card{
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      min-height:360px;
+      padding:25px 24px;
+      border:1px solid var(--line);
+      background:var(--panel);
+      overflow:hidden;
+    }
+
+    .price-card.featured{
+      border-color:rgba(23,45,226,.40);
+      background:linear-gradient(180deg,rgba(23,45,226,.09),rgba(255,255,255,.018));
+    }
+
+    .price-card.featured::before{
+      content:"";
+      position:absolute;
+      inset:0 0 auto 0;
+      height:3px;
+      background:var(--blue);
+    }
+
+    .price-type{
+      min-height:36px;
+      color:var(--muted-soft);
+      font-size:8px;
+      font-weight:800;
+      letter-spacing:.17em;
+      line-height:1.45;
+      text-transform:uppercase;
+    }
+
+    .price-value{
+      margin:11px 0 7px;
+      color:var(--blue-readable);
+      font-family:'widescreen-ex','Arial Black',Impact,sans-serif;
+      font-size:clamp(31px,3.1vw,44px);
+      font-weight:900;
+      line-height:1;
+      letter-spacing:-.045em;
+    }
+
+    .price-duration{
+      color:var(--white);
+      font-size:11px;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.055em;
+    }
+
+    .price-rule{
+      width:56px;
+      height:2px;
+      margin:18px 0;
+      background:var(--blue);
+    }
+
+    .price-card p{
+      color:var(--muted);
+      font-size:11.5px;
+      font-weight:300;
+      line-height:1.7;
+    }
+
+    .price-card p + p{margin-top:12px}
+
+    .price-emphasis{
+      margin-top:auto !important;
+      padding-top:19px;
+      color:var(--white) !important;
+      font-weight:600 !important;
+    }
+
+    .pricing-global{
+      max-width:1040px;
+      margin:18px auto 0;
+      padding:17px 20px;
+      border-left:3px solid var(--blue-readable);
+      background:rgba(102,117,255,.055);
       color:var(--muted);
       font-size:11px;
-      line-height:1.6;
+      line-height:1.7;
+      text-align:center;
     }
 
-    .commercial strong{
-      display:block;
-      margin-bottom:7px;
-      color:var(--white);
-      font-size:13px;
-      font-weight:800;
-      text-align:left;
-    }
+    .pricing-global strong{color:var(--white);font-weight:800}
 
-    .rules{
-      max-width:980px;
+    /* REPROGRAMACIONES */
+    .policy-card{
+      max-width:990px;
       margin:0 auto;
       border-top:1px solid var(--line);
     }
 
-    .rule{
+    .policy-row{
       display:grid;
-      grid-template-columns:180px 1fr;
+      grid-template-columns:230px 1fr;
       gap:30px;
-      padding:18px 0;
+      padding:20px 0;
       border-bottom:1px solid var(--line);
     }
 
-    .rule strong{
+    .policy-label{
       color:var(--white);
       font-size:9px;
       font-weight:800;
-      letter-spacing:.15em;
+      letter-spacing:.14em;
+      line-height:1.5;
       text-transform:uppercase;
     }
 
-    .rule p{
+    .policy-text{
       color:var(--muted);
-      font-size:13px;
-      line-height:1.7;
+      font-size:12.5px;
+      font-weight:300;
+      line-height:1.72;
     }
 
+    .policy-text strong{color:var(--white);font-weight:800}
+
+    /* COMO FUNCIONA */
     .steps{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -301,7 +447,7 @@
     }
 
     .step{
-      min-height:160px;
+      min-height:164px;
       padding:22px;
       border:1px solid var(--line);
       background:var(--panel);
@@ -320,14 +466,40 @@
       color:var(--white);
       font-size:11px;
       font-weight:800;
-      letter-spacing:.08em;
+      letter-spacing:.07em;
       text-transform:uppercase;
     }
 
     .step p{
       color:var(--muted);
+      font-size:11.5px;
+      font-weight:300;
+      line-height:1.68;
+    }
+
+    /* CALENDARIO */
+    .availability-note{
+      max-width:840px;
+      margin:0 auto 19px;
+      color:var(--muted);
       font-size:12px;
+      line-height:1.7;
+      text-align:center;
+    }
+
+    .availability-note strong{color:var(--white);font-weight:800}
+
+    .booking-ack{
+      max-width:900px;
+      margin:0 auto 22px;
+      padding:14px 18px;
+      border-left:3px solid var(--blue-readable);
+      background:rgba(102,117,255,.055);
+      color:rgba(255,255,255,.70);
+      font-size:11px;
+      font-weight:500;
       line-height:1.65;
+      text-align:center;
     }
 
     .booking-label{
@@ -378,6 +550,139 @@
       background:#fff;
     }
 
+    /* FAQ */
+    .faq-section{
+      padding-top:66px;
+    }
+
+    .faq-head{
+      max-width:1040px;
+      margin:0 auto 32px;
+      text-align:center;
+    }
+
+    .faq-title{
+      max-width:1040px;
+      margin:0 auto;
+      font-family:'widescreen-ex','Arial Black',Impact,sans-serif;
+      font-size:clamp(42px,6.5vw,82px);
+      font-weight:900;
+      line-height:.88;
+      letter-spacing:-.055em;
+      text-transform:uppercase;
+    }
+
+    .faq-title .blue{color:var(--blue)}
+
+    .faq-subtitle{
+      margin-top:18px;
+      color:var(--muted);
+      font-size:13px;
+      font-weight:300;
+    }
+
+    .faq-list{
+      max-width:1000px;
+      margin:0 auto;
+      border-top:1px solid var(--line);
+    }
+
+    details{
+      border-bottom:1px solid var(--line);
+    }
+
+    summary{
+      position:relative;
+      display:block;
+      width:100%;
+      padding:21px 58px 21px 2px;
+      color:var(--white);
+      font-size:13px;
+      font-weight:700;
+      line-height:1.52;
+      cursor:pointer;
+      list-style:none;
+      user-select:none;
+    }
+
+    summary::-webkit-details-marker{display:none}
+
+    summary::after{
+      content:"+";
+      position:absolute;
+      top:50%;
+      right:8px;
+      width:30px;
+      height:30px;
+      transform:translateY(-50%);
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(102,117,255,.42);
+      color:var(--blue-readable);
+      font-size:20px;
+      font-weight:300;
+      line-height:1;
+      transition:transform .18s ease,background .18s ease;
+    }
+
+    details[open] summary::after{
+      content:"−";
+      background:rgba(102,117,255,.08);
+    }
+
+    details[open] summary{
+      color:var(--blue-readable);
+    }
+
+    .faq-answer{
+      max-width:880px;
+      padding:0 54px 21px 2px;
+      color:var(--muted);
+      font-size:12px;
+      font-weight:300;
+      line-height:1.75;
+    }
+
+    .faq-answer strong{color:var(--white);font-weight:800}
+
+    /* CTA */
+    .contact-cta{
+      padding:58px 0 16px;
+      text-align:center;
+      border-top:1px solid var(--line);
+      margin-top:54px;
+    }
+
+    .contact-cta p{
+      margin:0 0 15px;
+      color:rgba(255,255,255,.66);
+      font-size:12px;
+      font-weight:500;
+    }
+
+    .contact-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:164px;
+      min-height:48px;
+      padding:0 24px;
+      border-radius:4px;
+      background:var(--whatsapp);
+      color:#fff;
+      text-decoration:none;
+      font-size:12px;
+      font-weight:800;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      transition:transform .18s ease,filter .18s ease;
+    }
+
+    .contact-btn:hover{
+      transform:translateY(-2px);
+      filter:brightness(1.05);
+    }
+
     .footer{
       display:flex;
       justify-content:center;
@@ -393,27 +698,28 @@
     }
 
     .footer strong{color:rgba(255,255,255,.52);font-weight:800}
-@media(max-width:900px){
-      .service-grid{grid-template-columns:1fr 1fr}
+
+    /* TABLET */
+    @media(max-width:900px){
+      .quick-grid{grid-template-columns:repeat(2,1fr)}
+      .pricing-grid{grid-template-columns:1fr}
+      .price-card{min-height:0}
       .steps{grid-template-columns:1fr}
     }
 
     @media(max-width:820px){
       .page{
         width:calc(100% - 28px);
-        padding:24px 0 42px;
+        padding:24px 0 46px;
       }
 
-      .brand{
-        padding-bottom:18px;
-      }
-
+      .brand{padding-bottom:18px}
       .brand img{height:24px}
       .brand-ref{display:none}
 
       .hero{
         max-width:680px;
-        padding:46px 0 38px;
+        padding:48px 0 40px;
       }
 
       .kicker{
@@ -425,69 +731,44 @@
       h1{
         font-size:clamp(40px,12.6vw,64px);
         line-height:.9;
-        letter-spacing:-.055em;
       }
 
       .intro{
-        max-width:600px;
+        max-width:610px;
         font-size:14px;
-        line-height:1.7;
+        line-height:1.72;
       }
 
-      .section{
-        padding:38px 0;
-      }
+      .section{padding:40px 0}
+      .section-head{margin-bottom:26px}
+      .section-no{font-size:16px}
+      .section-title{font-size:clamp(27px,7.2vw,39px)}
 
-      .section-head{
-        margin-bottom:24px;
-      }
-
-      .section-no{
-        margin-bottom:8px;
-        font-size:16px;
-      }
-
-      .section-title{
-        font-size:clamp(27px,7.2vw,38px);
-      }
-
-      .rule{
-        grid-template-columns:1fr;
-        gap:6px;
-        padding:16px 0;
-      }
-
-      .rule strong{
-        text-align:left;
-      }
-
-      .rule p{
-        text-align:left;
-      }
-
-      .commercial{
+      .definition-card{
         display:block;
-        padding:20px;
-        text-align:left;
+        padding:23px;
       }
 
-      .commercial-copy{
-        margin-top:18px;
-        padding-top:18px;
+      .definition-copy{
+        margin-top:20px;
+        padding-top:20px;
         padding-left:0;
         border-left:0;
         border-top:1px solid var(--line);
       }
 
-      .commercial strong{
-        display:block;
-        margin-top:0;
-        text-align:left;
+      .conditions{padding:26px 24px}
+
+      .policy-row{
+        grid-template-columns:1fr;
+        gap:7px;
+        padding:17px 0;
       }
 
-      .calendar-shell iframe{
-        height:880px;
-      }
+      .calendar-shell iframe{height:880px}
+
+      .faq-section{padding-top:48px}
+      .faq-title{font-size:clamp(38px,10.5vw,66px)}
 
       .footer{
         display:block;
@@ -496,6 +777,7 @@
       }
     }
 
+    /* MOBILE */
     @media(max-width:520px){
       .page{
         width:calc(100% - 20px);
@@ -506,12 +788,10 @@
         padding:0 2px 16px;
       }
 
-      .brand img{
-        height:22px;
-      }
+      .brand img{height:22px}
 
       .hero{
-        padding:40px 2px 34px;
+        padding:40px 2px 35px;
       }
 
       h1{
@@ -524,30 +804,74 @@
         line-height:1.72;
       }
 
-      .section{
-        padding:34px 0;
+      .section{padding:35px 0}
+
+      .quick-grid{
+        grid-template-columns:1fr 1fr;
       }
 
-      .service-grid{
-        grid-template-columns:1fr;
+      .quick-item{
+        min-height:123px;
+        padding:17px 14px;
       }
 
-      .service-item{
-        min-height:0;
-        padding:18px 17px;
-        text-align:center;
+      .quick-number{
+        font-size:clamp(22px,7.5vw,30px);
       }
 
-      .commercial{
-        padding:18px 17px;
+      .quick-label{
+        font-size:9px;
       }
 
-      .commercial-price{
-        font-size:clamp(30px,9vw,38px);
+      .quick-note{
+        font-size:9px;
       }
 
-      .rule{
-        padding:15px 4px;
+      .definition-card{
+        padding:20px 17px;
+      }
+
+      .definition-title{
+        font-size:clamp(27px,8vw,35px);
+      }
+
+      .definition-copy{
+        font-size:12px;
+      }
+
+      .conditions{
+        padding:22px 18px;
+      }
+
+      .conditions p{
+        font-size:12.4px;
+        line-height:1.74;
+      }
+
+      .conditions p:first-of-type{
+        font-size:14px;
+      }
+
+      .pricing-grid{
+        gap:9px;
+      }
+
+      .price-card{
+        padding:22px 18px;
+      }
+
+      .price-value{
+        font-size:clamp(32px,10vw,41px);
+      }
+
+      .pricing-global{
+        padding:15px 14px;
+        font-size:10.5px;
+        text-align:left;
+      }
+
+      .policy-row{
+        padding:16px 2px;
       }
 
       .step{
@@ -556,8 +880,17 @@
         text-align:center;
       }
 
-      .step-num{
-        margin-bottom:16px;
+      .step-num{margin-bottom:16px}
+
+      .availability-note{
+        font-size:11.5px;
+      }
+
+      .booking-ack{
+        margin-bottom:18px;
+        padding:13px 14px;
+        text-align:left;
+        font-size:10.5px;
       }
 
       .booking-label{
@@ -573,66 +906,63 @@
         height:930px;
       }
 
-      .whatsapp-section{
-        padding-top:26px;
+      .faq-section{
+        padding-top:44px;
       }
 
-      .whatsapp-btn{
-        width:100%;
-        min-width:0;
-        min-height:54px;
-        padding:0 16px;
-        font-size:11px;
+      .faq-head{
+        margin-bottom:25px;
       }
-    }
-  
-    .contact-cta{
-      padding:38px 0 14px;
-      text-align:center;
-    }
 
-    .contact-cta p{
-      margin:0 0 14px;
-      color:rgba(255,255,255,.62);
-      font-size:12px;
-      font-weight:500;
-    }
+      .faq-title{
+        font-size:clamp(37px,11vw,52px);
+        line-height:.9;
+      }
 
-    .contact-btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      min-width:150px;
-      min-height:46px;
-      padding:0 22px;
-      border-radius:4px;
-      background:#19b95b;
-      color:#ffffff;
-      text-decoration:none;
-      font-family:'Poppins',Arial,sans-serif;
-      font-size:12px;
-      font-weight:800;
-      letter-spacing:.04em;
-      text-transform:uppercase;
-      transition:transform .18s ease,filter .18s ease;
-    }
+      .faq-subtitle{
+        font-size:11.5px;
+        line-height:1.65;
+      }
 
-    .contact-btn:hover{
-      transform:translateY(-2px);
-      filter:brightness(1.05);
-    }
+      summary{
+        padding:18px 47px 18px 2px;
+        font-size:12px;
+      }
 
-    @media(max-width:520px){
+      summary::after{
+        right:2px;
+        width:28px;
+        height:28px;
+      }
+
+      .faq-answer{
+        padding:0 42px 19px 2px;
+        font-size:11.5px;
+        line-height:1.72;
+      }
+
       .contact-cta{
-        padding-top:30px;
+        margin-top:42px;
+        padding-top:42px;
       }
 
       .contact-btn{
-        min-width:150px;
-        min-height:46px;
+        width:100%;
+        min-width:0;
+        min-height:52px;
       }
     }
 
+    @media(max-width:380px){
+      .quick-grid{grid-template-columns:1fr}
+      .quick-item{min-height:0;text-align:center}
+      h1{font-size:34px}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{transition:none!important}
+    }
   </style>
 </head>
 
@@ -640,64 +970,64 @@
   <main class="page">
 
     <header class="brand">
-      <a href="https://jfinfante.video/" aria-label="Ir al inicio de jfinfante.video" class="brand-home"><img src="/LOGO_JUAN_INFANTE.svg" alt="Juan Infante"></a>
+      <a href="https://jfinfante.video/" aria-label="Ir al inicio de jfinfante.video" class="brand-home">
+        <img src="/LOGO_JUAN_INFANTE.svg" alt="Juan Infante">
+      </a>
       <div class="brand-ref">Producción audiovisual · Colombia</div>
     </header>
 
     <section class="hero">
       <div class="kicker">Reserva de producción</div>
-
       <h1>
         AGENDA TU<br>
         JORNADA DE <span class="blue">GRABACIÓN.</span>
       </h1>
-
       <p class="intro">
-        Selecciona uno de los espacios disponibles para programar tu próxima jornada de producción.
-        Cada reserva corresponde a <strong>2 horas efectivas de grabación presencial.</strong>
+        Reserva directamente uno de los espacios disponibles para tu producción.
+        Cada jornada corresponde a <strong>2 horas efectivas de grabación presencial.</strong>
       </p>
+    </section>
+
+    <section class="section">
+      <div class="quick-grid">
+        <div class="quick-item">
+          <div class="quick-number">2 H</div>
+          <div class="quick-label">Grabación efectiva</div>
+          <div class="quick-note">Tiempo real de producción presencial.</div>
+        </div>
+
+        <div class="quick-item">
+          <div class="quick-number">30 MIN</div>
+          <div class="quick-label">Acceso previo</div>
+          <div class="quick-note">Ingreso y montaje técnico antes de comenzar.</div>
+        </div>
+
+        <div class="quick-item accent">
+          <div class="quick-number">36 H</div>
+          <div class="quick-label">Anticipación mínima</div>
+          <div class="quick-note">Para nuevas reservas ordinarias.</div>
+        </div>
+
+        <div class="quick-item">
+          <div class="quick-number">2 MÁX.</div>
+          <div class="quick-label">Jornadas por día</div>
+          <div class="quick-note">Siempre según disponibilidad de agenda.</div>
+        </div>
+      </div>
     </section>
 
     <section class="section">
       <div class="section-head">
         <div class="section-no">01</div>
-        <h2 class="section-title">Tu jornada de producción</h2>
+        <h2 class="section-title">Qué estás reservando</h2>
       </div>
 
-      <div class="service-grid">
-        <div class="service-item">
-          <div class="service-label">Grabación efectiva</div>
-          <div class="service-value">2 horas de producción</div>
-        </div>
-
-        <div class="service-item">
-          <div class="service-label">Modalidad</div>
-          <div class="service-value">Producción presencial</div>
-        </div>
-
-        <div class="service-item">
-          <div class="service-label">Acceso previo</div>
-          <div class="service-value">30 min para montaje técnico</div>
-        </div>
-
-        <div class="service-item accent">
-          <div class="service-label">Reserva</div>
-          <div class="service-value blue">Mínimo 36 h de anticipación</div>
-        </div>
-      </div>
-
-      <div class="commercial">
-        <div>
-          <span class="commercial-label">Valor comercial de la jornada</span>
-          <div class="commercial-price">$350.000 COP</div>
-        </div>
-
-        <div class="commercial-copy">
-          <strong>Incluida según el servicio contratado.</strong>
-          <span>
-            Cada jornada representa un bloque exclusivo de producción, desplazamiento, montaje,
-            2 horas efectivas de grabación y desmontaje. Las jornadas adicionales se cotizan de manera independiente.
-          </span>
+      <div class="definition-card">
+        <div class="definition-title">Tu jornada de producción</div>
+        <div class="definition-copy">
+          Una jornada reserva un bloque exclusivo para tu producción presencial.
+          La hora elegida corresponde al <strong>inicio efectivo de la grabación</strong>, no a la llegada ni al montaje del equipo.
+          Llegaré con anticipación para realizar la preparación técnica necesaria y estar listo para comenzar a la hora reservada.
         </div>
       </div>
     </section>
@@ -706,46 +1036,152 @@
       <div class="section-head">
         <div class="section-no">02</div>
         <h2 class="section-title">Antes de reservar</h2>
+        <p class="section-copy">
+          Estas condiciones aplican a todas las jornadas. Están visibles aquí para que sepas exactamente
+          cómo funciona el tiempo reservado <strong>antes de agendar.</strong>
+        </p>
       </div>
 
-      <div class="rules">
-        <div class="rule">
-          <strong>Hora de inicio</strong>
-          <p>La hora seleccionada corresponde al inicio efectivo de la grabación, no a la hora de llegada del equipo.</p>
-        </div>
+      <div class="conditions">
+        <div class="conditions-kicker">Condiciones de la jornada</div>
 
-        <div class="rule">
-          <strong>Acceso previo</strong>
-          <p>El espacio deberá estar disponible al menos 30 minutos antes para permitir el ingreso, montaje y preparación técnica.</p>
-        </div>
+        <p><strong>Jornada de grabación presencial de 2 horas.</strong></p>
 
-        <div class="rule">
-          <strong>Preparación</strong>
-          <p>Al iniciar la jornada, las personas, productos, espacios y demás elementos necesarios deberán estar preparados y disponibles.</p>
-        </div>
+        <p>
+          La hora seleccionada corresponde al <strong>inicio efectivo de la grabación</strong>.
+          El espacio deberá estar disponible al menos <strong>30 minutos antes</strong> para permitir el ingreso,
+          montaje y preparación técnica del equipo.
+        </p>
 
-        <div class="rule">
-          <strong>Hora de cierre</strong>
-          <p>La grabación finaliza a la hora establecida. Los retrasos del establecimiento, participantes o elementos necesarios no extienden automáticamente el horario reservado.</p>
-        </div>
+        <p>
+          Al iniciar el horario reservado, las personas, productos, espacios y demás elementos necesarios
+          para la producción deberán estar <strong>preparados y disponibles</strong>.
+        </p>
 
-        <div class="rule">
-          <strong>Montaje técnico</strong>
-          <p>El montaje y desmontaje del equipo se realizan fuera de las 2 horas efectivas de producción y no reducen el tiempo de grabación.</p>
-        </div>
+        <p>
+          La jornada finalizará exactamente a la hora establecida en la reserva. Los retrasos relacionados
+          con la disponibilidad del establecimiento, participantes, productos, espacios o demás elementos necesarios
+          <strong>no extenderán el horario reservado</strong>.
+        </p>
 
-        <div class="rule">
-          <strong>Reprogramación</strong>
-          <p>Las reprogramaciones deberán solicitarse con mínimo 24 horas de anticipación. Una cancelación o reprogramación tardía podrá contabilizarse como jornada utilizada.</p>
-        </div>
+        <p>
+          El tiempo destinado al montaje y desmontaje técnico
+          <strong>no se descuenta de las 2 horas efectivas de producción</strong>.
+        </p>
 
+        <p>
+          Si por causas atribuibles al cliente no es posible completar la producción dentro del horario reservado,
+          el contenido pendiente deberá realizarse mediante una extensión de la jornada o una nueva jornada de producción,
+          según disponibilidad.
+        </p>
 
+        <p>
+          Si el retraso o la necesidad de repetir parte de la producción es atribuible a mí,
+          <strong>no se generará ningún cobro adicional al cliente</strong>.
+        </p>
       </div>
     </section>
 
     <section class="section">
       <div class="section-head">
         <div class="section-no">03</div>
+        <h2 class="section-title">Si necesitamos más tiempo</h2>
+        <p class="section-copy">
+          Estas tarifas aplican únicamente cuando se consume tiempo de producción
+          <strong>por fuera de la jornada ya contemplada.</strong>
+        </p>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="price-card">
+          <div class="price-type">Hora adicional</div>
+          <div class="price-value">$180.000</div>
+          <div class="price-duration">Hasta 60 minutos · COP</div>
+          <div class="price-rule"></div>
+          <p>
+            Extensión de la producción el mismo día. Solo puede utilizarse si existe disponibilidad
+            para continuar después de la hora de cierre.
+          </p>
+          <p>
+            La extensión debe acordarse antes de continuar y se contrata por bloques de hasta 60 minutos.
+          </p>
+          <p class="price-emphasis">No es automática y siempre está sujeta a disponibilidad.</p>
+        </article>
+
+        <article class="price-card featured">
+          <div class="price-type">Jornada adicional de producción</div>
+          <div class="price-value">$350.000</div>
+          <div class="price-duration">Hasta 2 horas efectivas · COP</div>
+          <div class="price-rule"></div>
+          <p>
+            Nueva jornada presencial cuando sea necesario volver otro día por razones atribuibles al cliente,
+            ampliar el alcance inicialmente acordado o realizar producción adicional.
+          </p>
+          <p class="price-emphasis">
+            Si tu servicio ya incluye la jornada que estás reservando, estos $350.000 NO se suman al valor de tu servicio.
+          </p>
+        </article>
+
+        <article class="price-card">
+          <div class="price-type">Jornada urgente de producción</div>
+          <div class="price-value">$500.000</div>
+          <div class="price-duration">Hasta 2 horas efectivas · COP</div>
+          <div class="price-rule"></div>
+          <p>
+            Aplica cuando una nueva jornada se solicita con menos de 36 horas de anticipación
+            o requiere abrir, reorganizar o utilizar disponibilidad fuera de la agenda ordinaria.
+          </p>
+          <p>
+            La jornada urgente reemplaza la tarifa de jornada adicional:
+            <strong>no se cobran $350.000 + $500.000.</strong>
+          </p>
+          <p class="price-emphasis">Siempre está sujeta a disponibilidad. La tarifa no garantiza que pueda abrirse un espacio.</p>
+        </article>
+      </div>
+
+      <div class="pricing-global">
+        <strong>Importante:</strong> las tarifas anteriores corresponden al tiempo adicional de producción presencial.
+        Nuevas piezas, videos, edición o entregables adicionales no están incluidos automáticamente y se cotizan por separado.
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-no">04</div>
+        <h2 class="section-title">Reprogramaciones y cancelaciones</h2>
+      </div>
+
+      <div class="policy-card">
+        <div class="policy-row">
+          <div class="policy-label">24 horas o más</div>
+          <div class="policy-text">
+            Una reserva puede <strong>reprogramarse sin costo</strong> cuando la solicitud se realiza
+            con mínimo 24 horas de anticipación.
+          </div>
+        </div>
+
+        <div class="policy-row">
+          <div class="policy-label">Menos de 24 horas</div>
+          <div class="policy-text">
+            Las cancelaciones o solicitudes de reprogramación realizadas con menos de 24 horas de anticipación
+            <strong>se consideran jornada utilizada</strong>. Para realizar posteriormente la producción será necesario
+            reservar una nueva jornada según las condiciones aplicables.
+          </div>
+        </div>
+
+        <div class="policy-row">
+          <div class="policy-label">Si la causa es mía</div>
+          <div class="policy-text">
+            Si la reprogramación o repetición es necesaria por una causa atribuible a mí,
+            <strong>no genera ningún costo adicional al cliente.</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div class="section-no">05</div>
         <h2 class="section-title">Cómo funciona</h2>
       </div>
 
@@ -759,7 +1195,7 @@
         <div class="step">
           <div class="step-num">02</div>
           <h3>Completa tus datos</h3>
-          <p>Indica empresa, WhatsApp y dirección exacta donde se realizará la jornada.</p>
+          <p>Indica marca o empresa, WhatsApp y dirección exacta donde se realizará la jornada.</p>
         </div>
 
         <div class="step">
@@ -772,8 +1208,17 @@
 
     <section class="section">
       <div class="section-head">
-        <div class="section-no">04</div>
+        <div class="section-no">06</div>
         <h2 class="section-title">Selecciona tu disponibilidad</h2>
+      </div>
+
+      <p class="availability-note">
+        <strong>La disponibilidad que aparece en este calendario es mi disponibilidad actual para grabaciones.</strong>
+        Si un horario no aparece, actualmente no puede reservarse como jornada ordinaria.
+      </p>
+
+      <div class="booking-ack">
+        Al confirmar tu reserva declaras haber leído y aceptado las condiciones de producción indicadas en esta página.
       </div>
 
       <div class="booking-label">Calendario de producción</div>
@@ -792,6 +1237,182 @@
       </section>
     </section>
 
+    <section class="section faq-section" id="preguntas-frecuentes">
+      <div class="faq-head">
+        <div class="kicker">Antes de escribir, revisa aquí</div>
+        <h2 class="faq-title">PREGUNTAS <span class="blue">FRECUENTES.</span></h2>
+        <p class="faq-subtitle">Todas las preguntas están visibles. Haz clic únicamente en la que necesites para ver la respuesta.</p>
+      </div>
+
+      <div class="faq-list">
+        <details>
+          <summary>¿Los $350.000 de jornada adicional se suman al valor de mi servicio?</summary>
+          <div class="faq-answer">
+            No. Si tu servicio o proyecto ya incluye la jornada que estás reservando, <strong>no existe ningún cobro adicional</strong>.
+            Los $350.000 aplican únicamente cuando necesitas una nueva jornada por fuera de lo contratado.
+          </div>
+        </details>
+
+        <details>
+          <summary>Mi reserva es de 4:00 p. m. a 6:00 p. m. ¿Qué pasa si estamos listos a las 5:00 p. m.?</summary>
+          <div class="faq-answer">
+            La grabación se realizará de 5:00 p. m. a 6:00 p. m. La jornada conserva su hora original de finalización.
+            El tiempo perdido por causas atribuibles al cliente <strong>no se recupera ni desplaza la reserva</strong>.
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Qué pasa si no alcanzamos a grabar todo?</summary>
+          <div class="faq-answer">
+            Si existe disponibilidad ese mismo día, puedes contratar una hora adicional.
+            Si es necesario volver otro día, deberá programarse una jornada adicional.
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Podemos seguir grabando después de la hora de cierre?</summary>
+          <div class="faq-answer">
+            Únicamente si existe disponibilidad. La extensión <strong>no es automática</strong>
+            y debe acordarse antes de continuar.
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Cuánto cuesta una hora adicional?</summary>
+          <div class="faq-answer">
+            <strong>$180.000 COP</strong> por un bloque de hasta 60 minutos adicionales de producción.
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Qué es una jornada adicional?</summary>
+          <div class="faq-answer">
+            Es una nueva visita de producción de hasta 2 horas efectivas que se necesita después de utilizar
+            la jornada originalmente contemplada o cuando se requiere producción por fuera del alcance contratado.
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Cuánto cuesta una jornada adicional?</summary>
+          <div class="faq-answer">
+            <strong>$350.000 COP</strong> por una nueva jornada de hasta 2 horas efectivas de producción presencial.
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Qué es una jornada urgente?</summary>
+          <div class="faq-answer">
+            Es una nueva jornada que se necesita con menos de 36 horas de anticipación
+            o que requiere reorganizar o abrir disponibilidad fuera de la agenda ordinaria.
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Cuánto cuesta una jornada urgente?</summary>
+          <div class="faq-answer">
+            <strong>$500.000 COP</strong> por una jornada urgente de hasta 2 horas efectivas de producción.
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Tengo que pagar $350.000 de jornada adicional más $500.000 de jornada urgente?</summary>
+          <div class="faq-answer">
+            No. Si aplica la jornada urgente, su valor es <strong>$500.000 COP</strong>.
+            La tarifa urgente reemplaza la tarifa normal de jornada adicional; no se suman ambas.
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Pagar una jornada urgente garantiza que puedas grabar?</summary>
+          <div class="faq-answer">
+            No. Una jornada urgente siempre está <strong>sujeta a disponibilidad</strong>.
+            La tarifa aplica únicamente si puedo aceptar y abrir ese espacio de producción.
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Qué pasa si el retraso es responsabilidad tuya?</summary>
+          <div class="faq-answer">
+            El cliente no pierde tiempo de producción ni debe pagar una nueva jornada para solucionar
+            un retraso o inconveniente atribuible a mí.
+          </div>
+        </details>
+
+        <details>
+          <summary>¿La jornada adicional o urgente incluye nuevos videos o edición?</summary>
+          <div class="faq-answer">
+            No necesariamente. Estas tarifas corresponden al <strong>tiempo adicional de producción presencial</strong>.
+            Nuevas piezas, edición o entregables por fuera del servicio contratado se cotizan aparte.
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Qué pasa si necesito cambiar la fecha?</summary>
+          <div class="faq-answer">
+            Puedes reprogramar sin costo con mínimo <strong>24 horas de anticipación</strong>.
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Qué pasa si cancelo o reprogramo con menos de 24 horas?</summary>
+          <div class="faq-answer">
+            La jornada se considera utilizada. Para realizar posteriormente la producción será necesario
+            reservar una nueva jornada según las condiciones aplicables.
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Qué pasa si no permitimos el ingreso 30 minutos antes?</summary>
+          <div class="faq-answer">
+            Si esto retrasa el montaje y el inicio de la producción, el tiempo perdido se considera atribuible al cliente
+            y <strong>no modifica la hora de finalización reservada</strong>.
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Por qué necesitas ingresar 30 minutos antes?</summary>
+          <div class="faq-answer">
+            Ese tiempo está destinado al ingreso, montaje, estabilización, preparación técnica y verificación del equipo
+            para poder comenzar a grabar puntualmente.
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Los 30 minutos de montaje hacen parte de mis 2 horas?</summary>
+          <div class="faq-answer">
+            No. Las 2 horas corresponden a producción efectiva. El montaje se realiza previamente
+            y el desmontaje posteriormente.
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Cuándo tienes disponibilidad para grabar?</summary>
+          <div class="faq-answer">
+            Los horarios disponibles son exactamente los que aparecen en el calendario de esta página.
+            Si un horario no aparece disponible, <strong>actualmente no puede reservarse como jornada ordinaria</strong>.
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Puedo reservar para mañana?</summary>
+          <div class="faq-answer">
+            Las nuevas reservas requieren mínimo 36 horas de anticipación.
+            Si necesitas una producción en un plazo menor, puede tratarse como una solicitud urgente
+            y estará sujeta a disponibilidad.
+          </div>
+        </details>
+
+        <details>
+          <summary>¿Puedo reservar sábado, domingo o fuera de los horarios disponibles?</summary>
+          <div class="faq-answer">
+            No como reserva ordinaria. Si necesitas abrir un espacio fuera de la disponibilidad publicada,
+            puedes consultarlo como producción urgente. Que exista una tarifa urgente
+            <strong>no significa que ese espacio esté garantizado</strong>.
+          </div>
+        </details>
+      </div>
+    </section>
+
     <section class="contact-cta">
       <p>¿Necesitas hablar antes de reservar?</p>
       <a
@@ -803,8 +1424,7 @@
       </a>
     </section>
 
-
-<footer class="footer">
+    <footer class="footer">
       <span>© 2026 <strong>Juan Infante</strong></span>
       <span>jfinfante.video</span>
     </footer>
