@@ -1,0 +1,22 @@
+# Credenciales y datos privados: no deben formar parte de un sitio público.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+credentials.json
+credentials-*.json
+service-account*.json
+secrets.json
+secrets/
+private/
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+*.log
+# .gitignore no retira archivos ya incluidos en Git ni sustituye la detección de secretos.
