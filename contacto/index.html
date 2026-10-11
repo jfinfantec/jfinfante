@@ -2,17 +2,27 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src &#x27;none&#x27;; script-src &#x27;self&#x27; &#x27;sha256-3UU08F3/hPNJupHT08YloVJ1PSHAlHv4yPA1eQzba2s=&#x27;; script-src-attr &#x27;none&#x27;; style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27; https://fonts.googleapis.com https://use.typekit.net https://p.typekit.net; img-src &#x27;self&#x27; data: https://jfinfante.video https://p.typekit.net; font-src &#x27;self&#x27; https://fonts.gstatic.com https://use.typekit.net; connect-src &#x27;self&#x27;; frame-src https://player.vimeo.com; media-src &#x27;self&#x27;; manifest-src &#x27;self&#x27;; worker-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contacto — Juan Infante</title>
+<meta name="description" content="Contacta a Juan Infante por WhatsApp o correo para conversar sobre tu proyecto de producción y edición de video.">
+<link rel="canonical" href="https://jfinfante.video/contacto/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Juan Infante">
+<meta property="og:title" content="Contacto — Juan Infante">
+<meta property="og:description" content="Contacta a Juan Infante por WhatsApp o correo para conversar sobre tu proyecto de producción y edición de video.">
+<meta property="og:url" content="https://jfinfante.video/contacto/">
+<meta name="twitter:card" content="summary">
+
 <link rel="stylesheet" href="https://use.typekit.net/utj7jfa.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,800;1,300;1,800&display=swap" rel="stylesheet">
 <style>
   :root{--black:#0a0a0a;--blue:#172DE2;--green:#1aad52;--white:#ffffff;}
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{font-family:'Poppins',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;cursor:none;min-height:100vh;display:flex;flex-direction:column;}
-  .cursor{width:10px;height:10px;background:var(--blue);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform 0.15s ease;}
-  .cursor-ring{width:34px;height:34px;border:1px solid rgba(23,45,226,0.5);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width 0.3s,height 0.3s;}
+  body{font-family:'Poppins',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column;}
   nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);background:rgba(10,10,10,0.85);border-bottom:1px solid rgba(255,255,255,0.05);}
   .nav-logo img{height:30px;width:auto;filter:brightness(0) invert(1);}
   .nav-links{display:flex;gap:36px;list-style:none;}
@@ -72,74 +82,215 @@
     footer{padding:20px 24px;}
   }
 </style>
+<style id="ajustes-2026">
+/* Ajustes sobre la identidad y las composiciones originales. */
+:root{--green:#61e317;--white:#f5f5f3;--charcoal:#202020;--muted:#bfc0c8;--line:#303138}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:100px}
+body{min-width:0}
+body.is-locked{overflow:hidden}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip-link{position:fixed;left:16px;top:12px;z-index:1000;padding:12px 18px;border-radius:6px;background:var(--green);color:var(--charcoal);font-size:13px;font-weight:800;transform:translateY(-160%)}
+.skip-link:focus{transform:none}
+img,svg{max-width:100%}
+button,a{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--green);outline-offset:5px}
+h1,h2,h3{max-width:100%;text-wrap:balance}
+nav{gap:20px}
+.nav-logo{display:inline-flex;flex-shrink:0}
+.nav-links{align-items:center}
+.nav-links a{color:#c2c3cb}
+.nav-cta,.btn-green,.action-green{background:var(--green);color:var(--charcoal);font-weight:800;border:1px solid transparent;box-shadow:none;min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none}
+.nav-cta:hover,.btn-green:hover,.action-green:hover{background:#77ec36;color:var(--charcoal);box-shadow:none;transform:translateY(-2px)}
+.nav-cta svg,.btn-green svg,.action-green svg{width:18px;height:18px;flex-shrink:0;fill:currentColor}
+.btn-primary,.btn-cv,.btn-green,.nav-cta,.action-link{max-width:100%;text-align:center}
+.btn-primary,.btn-cv,.btn-green{border-radius:8px}
+.nav-cta{border-radius:6px}
+.btn-primary:hover{box-shadow:none;background:#243df4}
+.btn-ghost{color:#c6c7cd;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+.hero-sub,.proyecto p,.section-body,.cta-box p{color:var(--muted)}
+.hero-titulo{color:#cbccd3}
+.hamburger{min-width:44px;min-height:44px;align-items:center;justify-content:center}
+.mobile-menu{z-index:300;overflow-y:auto;padding:76px 22px 36px;gap:24px;text-align:center;min-height:100dvh}
+.mobile-menu[hidden]{display:none}
+.mobile-menu a{max-width:100%;min-height:44px;display:flex;align-items:center;justify-content:center;line-height:1.2}
+.mobile-menu .close{min-width:48px;min-height:48px;top:12px;right:12px}
+.hero-logo img,.page-logo img{max-width:100%;object-fit:contain}
+.hero{min-height:100svh}
+footer{gap:20px}
+footer p{color:#b4b5bd;line-height:1.7}
+footer a{color:#c0c6ff}
+footer img,footer img.footer-logo{opacity:.72}
+.footer-social a{opacity:.78;min-width:32px;min-height:40px;justify-content:center}
+footer>div{flex-wrap:wrap;justify-content:center}
+.cta-box{border-radius:12px;padding:clamp(30px,6vw,60px) clamp(18px,5vw,60px)}
+.cta-box h3{line-height:1.05}
+.cta-box p{line-height:1.8}
+.story-text,.solo-text{color:#c9cad1}
+.cierre-block{margin-bottom:40px}
+.btn-cv{border-color:#626773;line-height:1.6;justify-content:center;min-height:48px}
+.contacto-grid{min-width:0}
+.contacto-item{min-width:0;border-color:#303138;border-radius:12px}
+.contacto-tipo{color:#b8bac3}
+.contacto-valor{overflow-wrap:anywhere;line-height:1.7}
+.contacto-item.green{background:var(--green);color:var(--charcoal);border-color:var(--green)}
+.contacto-item.green .contacto-tipo,.contacto-item.green .contacto-valor{color:var(--charcoal)}
+.contacto-item.green:hover{background:#77ec36;border-color:#77ec36}
+.contacto-valor svg{width:18px;height:18px;vertical-align:middle;margin-right:4px;fill:currentColor}
+.contacto-item[href^="mailto:"]{overflow-wrap:anywhere}
+@media(max-width:1050px){
+  nav{padding:14px 20px}
+  .nav-links,.nav-cta-desktop{display:none}
+  .hamburger{display:flex}
+}
+@media(max-width:768px){
+  .hero{padding-top:106px;padding-bottom:56px}
+  .hero-tag{font-size:10px;letter-spacing:2.4px;line-height:1.9;max-width:320px}
+  .hero-titulo{line-height:1.85;letter-spacing:1.6px}
+  .hero-sub{font-size:14px;line-height:1.9}
+  .hero-actions{width:100%;max-width:400px;gap:12px}
+  .hero-actions .btn-primary{padding:17px 22px;font-size:13px;line-height:1.5}
+  .proyecto h2{letter-spacing:-1.8px;line-height:.98}
+  .proyecto p{font-size:15px}
+  .story-block,.story-block.reverse{gap:24px;margin-bottom:44px}
+  .story-text,.solo-text{text-align:left;line-height:1.85}
+  .solo-text{padding:25px 22px;margin-bottom:44px}
+  .cierre-block{gap:24px;margin-bottom:36px}
+  .btns{gap:12px}
+  .btns .btn-cv{font-size:11px}
+  .btns .btn-green,.btns .btn-cv{width:100%;max-width:400px}
+  .contacto-item{padding:26px 22px}
+  .contacto .page-title{letter-spacing:-2.4px}
+}
+@media(max-width:360px){
+  .hero-actions .btn-primary{width:100%;padding:16px 12px;font-size:12px;letter-spacing:.5px}
+}
+@media(max-width:400px){.proyecto h2{font-size:clamp(34px,11vw,44px);letter-spacing:-1.8px}}
+@media(max-width:480px){.contacto .page-title{font-size:clamp(37px,12vw,52px);letter-spacing:-2.4px}}
+@media(max-height:500px) and (orientation:landscape){
+  .hero{min-height:auto}
+  .hero-sub{font-size:14px}
+  .mobile-menu{justify-content:flex-start;gap:14px;padding-top:70px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .hero-tag,.hero-logo,.hero-titulo,.hero-sub,.hero-actions{opacity:1;transform:none}
+}
+
+</style>
 </head>
-<body>
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
-<nav>
+<body data-page="contacto">
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<nav aria-label="Navegación principal">
   <a href="/" class="nav-logo"><img src="../LOGO_JUAN_INFANTE.svg" alt="Juan Infante"></a>
   <ul class="nav-links">
-    <li><a href="/miportafolio">Mi portafolio de video</a></li>
-    <li><a href="/servicios">Servicios</a></li>
-    <li><a href="/quiensoy">Quién soy</a></li>
-    <li><a href="/contacto" class="nav-active">Contacto</a></li>
+    <li><a href="/miportafolio/">Mi portafolio de video</a></li>
+    <li><a href="/servicios/">Servicios</a></li>
+    <li><a href="/quiensoy/">Quién soy</a></li>
+    <li><a href="/contacto/" class="nav-active" aria-current="page">Contacto</a></li>
   </ul>
-  <a href="https://wa.link/1ikw5z" class="nav-cta nav-cta-desktop" target="_blank">💬 Hablemos</a>
-  <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
+  <a href="https://wa.link/1ikw5z" class="nav-cta nav-cta-desktop" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Hablemos</a>
+  <button class="hamburger" type="button" aria-label="Abrir menú" aria-controls="mobileMenu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
 <!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <button class="close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
-  <a href="/" onclick="document.getElementById('mobileMenu').classList.remove('open')">Inicio</a>
-  <a href="/miportafolio" onclick="document.getElementById('mobileMenu').classList.remove('open')">Mi portafolio de video</a>
-  <a href="/servicios" onclick="document.getElementById('mobileMenu').classList.remove('open')">Servicios</a>
-  <a href="/quiensoy" onclick="document.getElementById('mobileMenu').classList.remove('open')">Quién soy</a>
-  <a href="/contacto" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contacto</a>
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menú de navegación" hidden>
+  <button class="close" type="button" aria-label="Cerrar menú">✕</button>
+  <a href="/">Inicio</a>
+  <a href="/miportafolio/">Mi portafolio de video</a>
+  <a href="/servicios/">Servicios</a>
+  <a href="/quiensoy/">Quién soy</a>
+  <a href="/contacto/">Contacto</a>
 </div>
 
-<section class="contacto">
+<main id="contenido" class="contacto" tabindex="-1">
   <div class="contacto-bg"></div>
   <img src="../memoji-hola.webp" alt="" class="memoji-contacto">
-  <h1 class="page-title">HABLЕМ<span class="uex">O</span>S.</h1>
+  <h1 class="page-title">HABLEM<span class="uex">O</span>S.</h1>
   <div class="contacto-grid">
-    <a href="https://wa.link/1ikw5z" class="contacto-item green" target="_blank">
+    <a href="https://wa.link/1ikw5z" class="contacto-item green" target="_blank" rel="noopener noreferrer">
       <p class="contacto-tipo">WhatsApp</p>
-      <p class="contacto-valor">💬 Venga le cuento</p>
+      <p class="contacto-valor"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Venga le cuento</p>
     </a>
-    <div class="contacto-item">
+    <a class="contacto-item" href="mailto:juanfelipeinfantecarreno@gmail.com">
       <p class="contacto-tipo">Correo</p>
       <p class="contacto-valor" style="user-select:all;">juanfelipeinfantecarreno&#64;gmail&#46;com</p>
-    </div>
-    <a href="https://www.instagram.com/infante.video/" class="contacto-item" target="_blank">
+    </a>
+    <a href="https://www.instagram.com/infante.video/" class="contacto-item" target="_blank" rel="noopener noreferrer">
       <p class="contacto-tipo">Instagram</p>
       <p class="contacto-valor">@infante.video</p>
     </a>
-    <a href="https://www.linkedin.com/in/jfinfantec" class="contacto-item" target="_blank">
+    <a href="https://www.linkedin.com/in/jfinfantec" class="contacto-item" target="_blank" rel="noopener noreferrer">
       <p class="contacto-tipo">LinkedIn</p>
       <p class="contacto-valor">Juan Infante</p>
     </a>
   </div>
-</section>
+</main>
 
 <footer>
   <p>© 2026 Juan Infante · <a href="https://jfinfante.video">jfinfante.video</a></p>
   <img src="../LOGO_JUAN_INFANTE.svg" alt="Juan Infante">
-  <p>Medellín, Colombia</p>
+  <p>La Ceja, Antioquia · Colombia</p>
 </footer>
 
+
 <script>
-  const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
-  let mx=0,my=0,rx=0,ry=0;
-  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px';});
-  function animateRing(){rx+=(mx-rx)*0.1;ry+=(my-ry)*0.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animateRing);}
-  animateRing();
-  document.querySelectorAll('a,button').forEach(el=>{
-    el.addEventListener('mouseenter',()=>{cursor.style.transform='translate(-50%,-50%) scale(2.5)';ring.style.width='54px';ring.style.height='54px';});
-    el.addEventListener('mouseleave',()=>{cursor.style.transform='translate(-50%,-50%) scale(1)';ring.style.width='34px';ring.style.height='34px';});
+(() => {
+  'use strict';
+  const menu = document.getElementById('mobileMenu');
+  const trigger = document.querySelector('.hamburger');
+  const menuClose = menu?.querySelector('.close');
+  const background = [...document.body.children].filter(el => !['NAV','SCRIPT','STYLE','DIALOG'].includes(el.tagName) && el !== menu);
+  function lock() { document.body.classList.toggle('is-locked', Boolean(menu?.classList.contains('open'))); }
+  function setMenu(open, restoreFocus = true) {
+    if (!menu || !trigger) return;
+    menu.hidden = !open;
+    menu.classList.toggle('open', open);
+    trigger.setAttribute('aria-expanded', String(open));
+    background.forEach(el => { el.inert = open; });
+    lock();
+    if (open) menuClose?.focus();
+    else if (restoreFocus) trigger.focus();
+  }
+  trigger?.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+  menuClose?.addEventListener('click', () => setMenu(false));
+  menu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false, false)));
+  document.addEventListener('keydown', event => {
+    if (!menu?.classList.contains('open')) return;
+    if (event.key === 'Escape') { event.preventDefault(); setMenu(false); }
+    if (event.key === 'Tab') {
+      const items = [...menu.querySelectorAll('button,a[href]')];
+      const first = items[0], last = items[items.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    }
   });
+  const desktop = window.matchMedia('(min-width:1051px)');
+  desktop.addEventListener('change', event => { if (event.matches) setMenu(false, false); });
+  // El reproductor ocupa únicamente la tarjeta que el visitante pulsó.
+  document.querySelectorAll('.media-card[data-player="vimeo"]').forEach(card => {
+    const play = card.querySelector('.media-play');
+    play?.addEventListener('click', () => {
+      const id = card.dataset.video;
+      if (!/^\d+$/.test(id) || card.querySelector('iframe')) return;
+      const frame = document.createElement('iframe');
+      frame.title = play.getAttribute('aria-label') || 'Reproductor de video';
+      frame.allow = 'autoplay; fullscreen; picture-in-picture; encrypted-media';
+      frame.allowFullscreen = true;
+      frame.referrerPolicy = 'strict-origin-when-cross-origin';
+      frame.src = 'https://player.vimeo.com/video/' + id + '?autoplay=1&playsinline=1&title=0&byline=0&portrait=0&dnt=1';
+      card.setAttribute('aria-busy', 'true');
+      frame.addEventListener('load', () => card.setAttribute('aria-busy', 'false'), { once: true });
+      card.replaceChildren(frame);
+      card.classList.add('is-playing');
+      frame.focus({ preventScroll: true });
+    });
+  });
+})();
+
 </script>
 </body>
 </html>
