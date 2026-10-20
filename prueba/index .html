@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servicios — Juan Infante</title>
+<link rel="stylesheet" href="https://use.typekit.net/utj7jfa.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,800;1,300;1,800&display=swap" rel="stylesheet">
+<style>
+  :root{--black:#0a0a0a;--blue:#172DE2;--green:#1aad52;--white:#ffffff;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Poppins',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;cursor:none;}
+
+  @font-face{font-family:'ransom-note';src:url('../rans____.ttf') format('truetype');font-weight:normal;font-style:normal;}
+  .cursor{width:10px;height:10px;background:var(--blue);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform 0.15s ease;}
+  .cursor-ring{width:34px;height:34px;border:1px solid rgba(23,45,226,0.5);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width 0.3s,height 0.3s;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 48px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);background:rgba(10,10,10,0.85);border-bottom:1px solid rgba(255,255,255,0.05);}
+  .nav-logo img{height:30px;width:auto;filter:brightness(0) invert(1);}
+  .nav-links{display:flex;gap:36px;list-style:none;}
+  .nav-links a{font-size:11px;font-weight:300;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.3s;}
+  .nav-links a:hover{color:var(--white);}
+  .nav-cta{font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--white);background:var(--green);padding:10px 22px;border-radius:3px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;}
+  .nav-cta:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(37,211,102,0.4);}
+
+  .wrap{max-width:1100px;margin:0 auto;padding:120px 48px 80px;text-align:center;}
+  .divider{height:1px;background:rgba(255,255,255,0.06);margin:80px 0;}
+  .section-title{font-family:'widescreen-ex',sans-serif;font-weight:900;font-size:clamp(64px,8vw,80px);line-height:0.92;letter-spacing:-3px;margin-bottom:8px;}
+  .section-body{font-size:15px;font-weight:300;color:var(--white);max-width:640px;line-height:1.9;margin:0 auto;}
+  .section-body strong{color:var(--white);font-weight:800;text-transform:uppercase;}
+  .section-body em{font-style:italic;color:rgba(255,255,255,0.7);}
+
+  .video-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px;}
+  .video-v{position:relative;padding-bottom:177.78%;height:0;overflow:hidden;border-radius:4px;background:#111;}
+  .video-v iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+  .video-title{font-size:12px;font-weight:800;margin-top:8px;color:rgba(255,255,255,0.7);}
+
+  .foto-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:40px;}
+  .foto-item{overflow:hidden;aspect-ratio:1;}
+  .foto-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s;filter:grayscale(15%);}
+  .foto-item:hover img{transform:scale(1.05);filter:grayscale(0%);}
+
+  .diseno-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:40px;}
+  .diseno-item{overflow:hidden;aspect-ratio:9/16;}
+  .diseno-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s;}
+  .diseno-item:hover img{transform:scale(1.05);}
+
+  .servicios-lista{margin:40px auto 0;display:flex;flex-direction:column;max-width:520px;width:100%;text-align:left;}
+  .servicio-item{padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:16px;}
+  .servicio-arrow{width:40px;height:40px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;flex-shrink:0;color:var(--white);font-family:'Poppins',sans-serif;}
+  .servicio-texto{font-size:16px;font-weight:300;color:var(--white);line-height:1.6;}
+  .servicio-texto strong{color:var(--white);font-weight:800;}
+
+  .proceso-lista{margin:40px auto 0;display:flex;flex-direction:column;max-width:520px;width:100%;text-align:left;}
+  .proceso-item{display:flex;gap:24px;padding-bottom:32px;position:relative;align-items:center;}
+  .proceso-item:not(:last-child)::before{content:'';position:absolute;left:19px;top:44px;width:2px;height:calc(100% - 44px);background:rgba(23,45,226,0.2);}
+  .proceso-num{width:40px;height:40px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;flex-shrink:0;}
+  .proceso-content p{font-size:15px;font-weight:300;color:var(--white);line-height:1.7;}
+  .proceso-content p strong{color:var(--white);font-weight:800;text-transform:uppercase;}
+
+  footer{padding:32px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,0.05);}
+  footer p{font-size:11px;font-weight:300;color:rgba(255,255,255,0.2);}
+  footer a{color:var(--blue);text-decoration:none;font-weight:800;}
+  footer img{height:22px;width:auto;opacity:0.3;filter:brightness(0) invert(1);}
+
+  /* HAMBURGER */
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:transparent;border:none;}
+  .hamburger span{width:24px;height:2px;background:var(--white);border-radius:2px;transition:all 0.3s;}
+  .mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--black);z-index:99;flex-direction:column;justify-content:center;align-items:center;gap:32px;}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{font-size:clamp(24px,6vw,36px);font-family:'widescreen-ex',sans-serif;font-weight:900;color:var(--white);text-decoration:none;letter-spacing:-1px;transition:color 0.3s;}
+  .mobile-menu a:hover{color:var(--blue);}
+  .mobile-menu .close{position:absolute;top:24px;right:24px;font-size:28px;cursor:pointer;color:var(--white);background:none;border:none;font-family:'Poppins',sans-serif;}
+
+  /* BURBUJAS AZULES */
+  .burbuja{background:var(--blue);border-radius:12px;padding:16px 28px;margin:8px auto;max-width:640px;width:100%;color:var(--white);text-align:center;display:block;}
+  .burbuja-inline{width:auto;max-width:none;display:inline-block;}
+  .burbuja p{color:var(--white);font-size:15px;font-weight:300;line-height:1.8;} .burbuja p.burbuja-title{font-size:clamp(22px,3.5vw,37px);font-weight:900;line-height:0.92;letter-spacing:-1px;white-space:nowrap;} .burbuja p.burbuja-aurea{font-size:clamp(22px,3.5vw,37px);font-weight:900;line-height:0.92;letter-spacing:-1px;white-space:nowrap;}
+  .burbuja strong{color:var(--white);font-weight:800;text-transform:uppercase;}
+  .burbuja em{font-style:italic;}
+  .burbuja-body{width:100%;max-width:640px;}
+  .burbuja-title{font-family:'widescreen-ex',sans-serif;font-weight:900;font-size:clamp(32px,5vw,60px);line-height:0.92;letter-spacing:-3px;color:var(--white);}
+  .burbuja-aurea{font-family:'widescreen-ex',sans-serif;font-weight:900;font-size:clamp(32px,5vw,60px);line-height:0.92;letter-spacing:-3px;color:var(--white);}
+
+  /* CÓMO ES - dos líneas */
+  .como-es-wrap{text-align:center;margin-bottom:24px;}
+  .como-es-l1{display:block;font-family:'widescreen-ex',sans-serif;font-weight:900;font-size:clamp(64px,8vw,80px);line-height:0.92;letter-spacing:-3px;color:var(--white);}
+  .como-es-l2-wrap{display:inline-block;}
+  .proceso-claro{font-size:clamp(14px,4vw,24px);font-weight:800;text-transform:uppercase;color:var(--white);text-align:center;margin:24px auto 32px;max-width:640px;white-space:nowrap;}
+
+  /* DISEÑO GRÁFICO en una línea en desktop */
+  .titulo-diseno{white-space:nowrap;display:block;text-align:center;width:100%;}
+
+  /* UEX letra */
+  .uex{font-family:'widescreen-uex',sans-serif;font-weight:900;font-style:normal;}
+
+  /* TÍTULO MIXTO DISEÑO GRÁFICO */
+  .titulo-diseno-wrap{text-align:center;margin-bottom:8px;line-height:1;}
+  .titulo-diseno-l1{display:block;line-height:0.7;}
+  .titulo-diseno-l2{display:block;font-family:'ransom-note',sans-serif;font-weight:normal;font-size:clamp(41px,8.05vw,92px);text-transform:uppercase;letter-spacing:2px;line-height:1;}
+  .letra-sloop{font-family:'sloop-script-three',sans-serif;font-weight:400;font-style:normal;font-size:clamp(54px,10.5vw,120px);}
+  .letra-ex{font-family:'widescreen-ex',sans-serif;font-weight:900;font-size:clamp(36px,7vw,80px);}
+  .letra-uex{font-family:'widescreen-uex',sans-serif;font-weight:900;font-size:clamp(36px,7vw,80px);}
+
+  @media(max-width:768px){
+    nav{padding:18px 20px;} .nav-links{display:none;} .nav-cta-desktop{display:none;} .hamburger{display:flex;}
+    .wrap{padding:100px 20px 60px;}
+    .burbuja p.burbuja-title{font-size:clamp(14px,4.5vw,22px) !important;}
+    .burbuja p.burbuja-aurea{font-size:clamp(14px,4.5vw,22px) !important;}
+    .burbuja-inline{max-width:calc(100vw - 40px);}
+    .como-es-l1{font-size:clamp(40px,8vw,64px);}
+    .burbuja-title{font-size:clamp(24px,4vw,40px);}
+    .burbuja-aurea{font-size:clamp(24px,4vw,40px);}
+    .section-title{font-size:clamp(40px,8vw,64px);}
+    .titulo-movil-md{font-size:clamp(32px,7vw,64px) !important;max-width:100%;box-sizing:border-box;}
+    .titulo-diseno{white-space:normal;}
+    .video-grid-4{grid-template-columns:repeat(2,1fr);}
+    .foto-grid{grid-template-columns:repeat(2,1fr);}
+    .diseno-grid{grid-template-columns:repeat(2,1fr);}
+    footer{flex-direction:column;gap:16px;padding:28px 20px;text-align:center;}
+  }
+
+  .nav-active{background:var(--white) !important;color:var(--black) !important;padding:6px 14px;border-radius:3px;font-weight:800 !important;}
+
+  @media(min-width:769px) and (max-width:1024px){
+    .wrap{padding:100px 32px 60px;}
+    .section-title{font-size:clamp(44px,8vw,90px);}
+    .burbuja-title{font-size:clamp(28px,5vw,56px);}
+    .burbuja-aurea{font-size:clamp(28px,5vw,56px);}
+    .como-es-l1{font-size:clamp(44px,8vw,90px);}
+    .burbuja p.burbuja-title{font-size:clamp(22px,3.5vw,37px);}
+    .burbuja p.burbuja-aurea{font-size:clamp(22px,3.5vw,37px);}
+    .video-grid-4{grid-template-columns:repeat(2,1fr);}
+    .foto-grid{grid-template-columns:repeat(3,1fr);}
+    .diseno-grid{grid-template-columns:repeat(2,1fr);}
+  }
+
+  @media(max-width:900px) and (orientation:landscape){
+    nav{padding:12px 20px;}
+    .nav-logo img{height:24px;}
+    .wrap{padding:80px 24px 40px;}
+    .section-title{font-size:clamp(40px,7vw,80px);}
+    .burbuja-title{font-size:clamp(24px,4vw,40px);}
+    .burbuja-aurea{font-size:clamp(24px,4vw,40px);}
+    .como-es-l1{font-size:clamp(40px,7vw,80px);}
+    footer{padding:20px 24px;}
+  }
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<nav>
+  <a href="/" class="nav-logo"><img src="../LOGO_JUAN_INFANTE.svg" alt="Juan Infante"></a>
+  <ul class="nav-links">
+    <li><a href="/miportafolio">Mi portafolio de video</a></li>
+    <li><a href="/servicios" class="nav-active">Servicios</a></li>
+    <li><a href="/quiensoy">Quién soy</a></li>
+    <li><a href="/contacto">Contacto</a></li>
+  </ul>
+  <a href="https://wa.link/1ikw5z" class="nav-cta nav-cta-desktop" target="_blank">💬 Hablemos</a>
+  <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
+  <a href="/" onclick="document.getElementById('mobileMenu').classList.remove('open')">Inicio</a>
+  <a href="/miportafolio" onclick="document.getElementById('mobileMenu').classList.remove('open')">Mi portafolio de video</a>
+  <a href="/servicios" onclick="document.getElementById('mobileMenu').classList.remove('open')">Servicios</a>
+  <a href="/quiensoy" onclick="document.getElementById('mobileMenu').classList.remove('open')">Quién soy</a>
+  <a href="/contacto" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contacto</a>
+</div>
+
+<div class="wrap">
+
+  <h1 class="section-title">¿QUÉ HAGO?</h1>
+  <p class="section-body">Trabajo con marcas y negocios <strong>QUE NECESITAN ORDENAR SU COMUNICACIÓN Y CONVERTIRLA EN UNA HERRAMIENTA COMERCIAL.</strong></p>
+
+  <div class="burbuja" style="width:100%;max-width:640px;">
+    <p>Mi trabajo parte de entender el negocio y la estrategia, <strong>PARA LUEGO EJECUTAR CONTENIDO AUDIOVISUAL Y DISEÑO CON CRITERIO NARRATIVO, TÉCNICO Y COMERCIAL.</strong></p>
+  </div>
+
+  <p class="section-body">Cada pieza se piensa para cumplir un objetivo concreto: <strong>ATRAER, COMUNICAR Y CONVERTIR.</strong></p>
+  <div style="text-align:center;margin-top:40px;">
+    <a href="https://wa.link/1ikw5z" style="font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--white);background:var(--green);padding:14px 32px;border-radius:3px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;" target="_blank">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Venga le cuento
+    </a>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2 class="section-title">VIDEO</h2>
+  <div style="text-align:center;width:100%;">
+    <div class="burbuja burbuja-inline">
+      <p class="burbuja-title">REELS · TIKTOK · SHORTS</p>
+    </div>
+  </div>
+  <p class="section-body">Producción y edición de video pensada para <strong>COMUNICAR CLARO, SOSTENER ATENCIÓN Y POSICIONAR MARCA.</strong></p>
+  <div class="video-grid-4">
+    <div><div class="video-v"><iframe src="https://player.vimeo.com/video/1178731288" allowfullscreen></iframe></div><p class="video-title">Reel Lanzamiento</p></div>
+    <div><div class="video-v"><iframe src="https://player.vimeo.com/video/1178730647" allowfullscreen></iframe></div><p class="video-title">Reel Evento</p></div>
+    <div><div class="video-v"><iframe src="https://player.vimeo.com/video/1178731542" allowfullscreen></iframe></div><p class="video-title">Motion Graphics</p></div>
+    <div><div class="video-v"><iframe src="https://player.vimeo.com/video/1179339027" allowfullscreen></iframe></div><p class="video-title">Storytelling Edición</p></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2 class="section-title titulo-movil-md">FOT<span class="uex">O</span>GRAFÍA</h2>
+  <div class="burbuja" style="width:100%;max-width:640px;">
+    <p>Pensada para <strong>COMUNICACIÓN DIGITAL, IDENTIDAD VISUAL Y USO COMERCIAL.</strong></p>
+  </div>
+  <div class="foto-grid">
+    <div class="foto-item"><img src="../foto (1).jpg" alt=""></div>
+    <div class="foto-item"><img src="../foto (2).jpg" alt=""></div>
+    <div class="foto-item"><img src="../foto (3).jpg" alt=""></div>
+    <div class="foto-item"><img src="../foto (4).jpg" alt=""></div>
+    <div class="foto-item"><img src="../foto (6).jpg" alt=""></div>
+    <div class="foto-item"><img src="../foto (7).jpg" alt=""></div>
+    <div class="foto-item"><img src="../foto (8).jpg" alt=""></div>
+    <div class="foto-item"><img src="../foto (9).jpg" alt=""></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="titulo-diseno-wrap">
+    <span class="titulo-diseno-l1"><span class="letra-sloop">D</span><span class="letra-ex">ISEÑ</span><span class="letra-uex">O</span></span>
+    <span class="titulo-diseno-l2">GRÁFICO</span>
+  </div>
+  <div class="burbuja" style="width:100%;max-width:640px;">
+    <p>Aplicado a <strong>REDES SOCIALES Y COMUNICACIÓN DE MARCA.</strong></p>
+  </div>
+  <div class="diseno-grid">
+    <div class="diseno-item"><img src="../5.jpg" alt=""></div>
+    <div class="diseno-item"><img src="../16-mayo.jpg" alt=""></div>
+    <div class="diseno-item"><img src="../28.jpg" alt=""></div>
+    <div class="diseno-item"><img src="../fonda-isla.jpg" alt=""></div>
+    <div class="diseno-item"><img src="../ISLA-29-NOVIEMBRE.jpg" alt=""></div>
+    <div class="diseno-item"><img src="../MEDIA.jpg" alt=""></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2 class="section-title titulo-movil-md" style="background:var(--blue);border-radius:20px;padding:20px 36px;display:inline-block;">SERVICI<span class="uex">O</span>S</h2>
+  <div class="servicios-lista">
+    <div class="servicio-item"><div class="servicio-arrow">&#9658;</div><p class="servicio-texto">Producción de <strong>CONTENIDO AUDIOVISUAL</strong> para redes sociales.</p></div>
+    <div class="servicio-item"><div class="servicio-arrow">&#9658;</div><p class="servicio-texto"><strong>FOTOGRAFÍA PROFESIONAL</strong> de producto, marca y eventos.</p></div>
+    <div class="servicio-item"><div class="servicio-arrow">&#9658;</div><p class="servicio-texto">Diseño gráfico para <strong>COMUNICACIÓN DIGITAL.</strong></p></div>
+    <div class="servicio-item"><div class="servicio-arrow">&#9658;</div><p class="servicio-texto" style="font-weight:800;font-style:italic;text-transform:uppercase;">ESTRATEGIA DE CONTENIDO Y PLANIFICACIÓN MENSUAL.</p></div>
+    <div class="servicio-item"><div class="servicio-arrow">&#9658;</div><p class="servicio-texto"><strong>PRE-PRODUCCIÓN, PRODUCCIÓN Y POST-PRODUCCIÓN</strong> profesional de video.</p></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="como-es-wrap">
+    <span class="como-es-l1">CÓMO ES</span>
+    <div style="text-align:center;width:100%;">
+      <div class="burbuja burbuja-inline como-es-l2-wrap" style="margin:8px 0;">
+        <p class="burbuja-aurea">TRABAJAR C<span class="uex">O</span>NMIGO</p>
+      </div>
+    </div>
+  </div>
+  <p class="proceso-claro">EL PROCESO ES CLARO Y ORDENADO.</p>
+  <div class="proceso-lista">
+    <div class="proceso-item"><div class="proceso-num">1</div><div class="proceso-content"><p>Primero se define <strong>EL OBJETIVO Y EL MENSAJE.</strong></p></div></div>
+    <div class="proceso-item"><div class="proceso-num">2</div><div class="proceso-content"><p>Luego <strong>SE ESTRUCTURA LA IDEA</strong> y el formato adecuado.</p></div></div>
+    <div class="proceso-item"><div class="proceso-num">3</div><div class="proceso-content"><p>Se realiza la <strong>PRODUCCIÓN Y GRABACIÓN</strong> necesaria.</p></div></div>
+    <div class="proceso-item"><div class="proceso-num">4</div><div class="proceso-content"><p><strong>SE EDITA Y OPTIMIZA</strong> el material final.</p></div></div>
+    <div class="proceso-item"><div class="proceso-num">5</div><div class="proceso-content"><p>Se entregan las piezas <strong>LISTAS PARA SU PUBLICACIÓN.</strong></p></div></div>
+  </div>
+  <div style="text-align:center;margin-top:40px;">
+    <a href="https://wa.link/1ikw5z" style="font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--white);background:var(--green);padding:14px 32px;border-radius:3px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;" target="_blank">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Venga le cuento
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 Juan Infante · <a href="https://jfinfante.video">jfinfante.video</a></p>
+  <img src="../LOGO_JUAN_INFANTE.svg" alt="Juan Infante">
+  <p>Medellín, Colombia</p>
+</footer>
+
+<script>
+  const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px';});
+  function animateRing(){rx+=(mx-rx)*0.1;ry+=(my-ry)*0.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animateRing);}
+  animateRing();
+  document.querySelectorAll('a,button').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{cursor.style.transform='translate(-50%,-50%) scale(2.5)';ring.style.width='54px';ring.style.height='54px';});
+    el.addEventListener('mouseleave',()=>{cursor.style.transform='translate(-50%,-50%) scale(1)';ring.style.width='34px';ring.style.height='34px';});
+  });
+</script>
+</body>
+</html>
