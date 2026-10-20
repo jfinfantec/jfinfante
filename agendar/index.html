@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src &#x27;none&#x27;; script-src &#x27;none&#x27;; script-src-attr &#x27;none&#x27;; style-src &#x27;sha256-mRoSJSmOvG+jg5aU+TBdNTTRG9E8Z/cLHSvXCGEziHI=&#x27; https://fonts.googleapis.com https://use.typekit.net https://p.typekit.net; style-src-attr &#x27;none&#x27;; img-src &#x27;self&#x27; data: https://p.typekit.net; font-src https://fonts.gstatic.com https://use.typekit.net; frame-src https://calendar.google.com; connect-src &#x27;none&#x27;; media-src &#x27;none&#x27;; worker-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src &#x27;none&#x27;; script-src &#x27;none&#x27;; script-src-attr &#x27;none&#x27;; style-src https://fonts.googleapis.com https://use.typekit.net https://p.typekit.net &#x27;sha256-mRoSJSmOvG+jg5aU+TBdNTTRG9E8Z/cLHSvXCGEziHI=&#x27; &#x27;sha256-V2a6LGsDvzAEyIZ65D0SYqheD1HDfxXRCAiIiEGN1M4=&#x27; &#x27;sha256-g3FHKiSWxR4HqBDk9oReHVA1h9NNszB8XEdyKeVvRXE=&#x27; &#x27;sha256-b2330f7V5oWzAWYq14+D1xhkYDFi0J0tS/O5tY7vZ3s=&#x27; &#x27;sha256-rYEaLXMFd3a8wchRUlLQ+VivHOoLnVlhnQ0rvz4wULA=&#x27;; style-src-attr &#x27;none&#x27;; img-src &#x27;self&#x27; data: https://p.typekit.net; font-src https://fonts.gstatic.com https://use.typekit.net; frame-src https://calendar.google.com; connect-src &#x27;none&#x27;; media-src &#x27;none&#x27;; worker-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;; upgrade-insecure-requests ">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="robots" content="noindex, nofollow">
@@ -167,6 +167,56 @@ details[open] > summary::after { content: '−'; background: var(--blue); border
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+</style>
+<style id="jf-agendar-ajustes">
+/* Tiempo adicional: conservar tarifas y condiciones; agrupar sin aumentar altura. */
+.extras .fees{background:#14151a;border:1px solid #303138;border-radius:14px;padding:0 18px;overflow:hidden}
+.extras .fee-row{padding:14px 0;border-bottom-color:#303138}
+.extras .fee-row:last-child{border-bottom:0}
+.extras .fee-row dt{font-weight:500}
+.extras .fee-price{font-size:16px;font-weight:500}
+.extras .included-note strong{font-weight:500}
+.extras .fee-detail,.extras .fees-note{text-align:left}
+@media(max-width:380px){.extras .fee-row{grid-template-columns:1fr;gap:4px}.extras .fee-detail{grid-column:1}}
+</style>
+<style id="jf-titulos-agendar">body h1,body .section-title{letter-spacing:-.045em}</style>
+<style id="jf-ajustes-selectivos">
+/* Componentes equivalentes: misma presentación, sin cambiar su contenido. */
+:root{--jf-panel:#14151a;--jf-line:#303138;--jf-control:#17181e;--jf-white:#f5f5f3;--jf-muted:#bfc0c8;--jf-blue:#172de2;--jf-blue-border:#3148ff;--jf-green:#61e317}
+body .jf-extended-o{font-family:'widescreen-uex','widescreen-ex',sans-serif;font-weight:900;font-style:normal}
+
+/* Recuadros finales existentes; no se añade un marco a los cierres con memoji. */
+body .portfolio-wrap .cta-box,
+body .services-ending,
+body .contact-cta,
+body .site-shell :is(.closing,.production-closing,.meta-closing)>.container{
+ background:#0a0a0a;border:1px solid var(--jf-blue-border);border-radius:26px;
+ text-align:center
+}
+body .portfolio-wrap .cta-box h2,
+body .services-ending h2,
+body .contact-cta h2,
+body .site-shell :is(.closing,.production-closing,.meta-closing) h2{
+ font-family:'widescreen-ex',sans-serif;font-size:clamp(24px,6.15vw,32px);font-weight:900;
+ font-style:normal;line-height:1.13;letter-spacing:-.045em;text-align:center;
+ text-transform:uppercase;overflow-wrap:normal
+}
+body .portfolio-wrap .cta-box p,
+body .services-ending p,
+body .contact-cta p,
+body .site-shell :is(.closing,.production-closing,.meta-closing) .closing-copy,
+body .site-shell .meta-closing-copy>p{color:var(--jf-muted);font-size:15px;font-weight:300;line-height:1.75;text-align:center}
+
+
+</style>
+
+<style id="jf-cierre-ancho-escritorio">
+@media (min-width: 769px) {
+  body .contact-cta {
+    max-width: 560px;
+    margin-inline: auto;
+  }
 }
 </style>
 </head>
@@ -334,8 +384,9 @@ details[open] > summary::after { content: '−'; background: var(--blue); border
       </details>
     </section>
 
-    <section class="contact-cta" aria-label="Contacto">
-      <p>¿Necesitas hablar antes de reservar?</p>
+    <section class="contact-cta" aria-labelledby="contacto-reserva-titulo">
+      <h2 id="contacto-reserva-titulo">¿ALGUNA DUDA?</h2>
+      <p>Te ayudo a aclarar los detalles antes de reservar.</p>
       <a class="button" href="https://api.whatsapp.com/send?phone=573046753870&amp;text=Hola%20Juan.%20Tengo%20una%20duda%20antes%20de%20reservar%20mi%20jornada%20de%20grabaci%C3%B3n." target="_blank" rel="noopener noreferrer">Escríbeme por WhatsApp</a>
     </section>
 
