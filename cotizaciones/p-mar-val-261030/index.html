@@ -173,18 +173,18 @@
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     @media print {
-      @page { size: A4; margin: 13mm 15mm; }
+      @page { size: A4; margin: 10mm 15mm; }
       :root { color-scheme: light; }
       html { scroll-behavior: auto; }
       body { background: #fff; color: #111; font-size: 9pt; line-height: 1.5; }
       .wrap { width: 100%; max-width: none; }
       strong, .footer-name { color: #111; }
       .site-header, .conditions, .term, footer { border-color: #bbb; }
-      .header-inner { min-height: 15mm; }
+      .header-inner { min-height: 12mm; }
       .brand img { width: 24mm; filter: brightness(0); }
       .document-meta { color: #333; font-size: 7pt; }
       .skip-link, .document-tools, .conditions > summary { display: none !important; }
-      .hero { padding-block: 5mm 4mm; }
+      .hero { padding-block: 3mm 2mm; }
       h1 { display: block; text-align: center; }
       .heading-intro { display: block; white-space: nowrap; }
       .heading-script { font-size: 33pt; line-height: .95; }
@@ -193,12 +193,12 @@
       .hero-actions { display: block; margin-top: 2mm; text-align: left; }
       .portfolio-button { display: inline; min-height: 0; padding: 0; border: 0; color: #333; font-size: 8pt; text-decoration: underline; }
       .offer { border-color: #777; background: #fff; border-radius: 3mm; break-inside: avoid; }
-      .modality { grid-template-columns: minmax(0,1fr) 20mm; gap: 5mm; padding: 3mm 4mm; }
+      .modality { grid-template-columns: minmax(0,1fr) 14mm; gap: 4mm; padding: 2mm 4mm; }
       .modality h2 { font-size: 12pt; }
       .mode-name { margin-top: .5mm; color: #333; font-size: 9pt; }
       .equipment-note { margin-top: 1mm; color: #333; font-size: 8pt; }
-      .agile-setup { width: 20mm; height: 33mm; }
-      .offer-content { grid-template-columns: 52mm minmax(0,1fr); gap: 5mm; padding: 3mm 4mm; border-color: #ccc; }
+      .agile-setup { width: 14mm; height: 22mm; }
+      .offer-content { grid-template-columns: 45mm minmax(0,1fr); gap: 4mm; padding: 2.5mm 4mm; border-color: #ccc; }
       .quantity { font-size: 10pt; margin-bottom: 1mm; }
       .price-value { font-size: 22pt; }
       .currency { color: #333; font-size: 8pt; }
@@ -206,13 +206,14 @@
       .scope-list li { padding-left: 4mm; break-inside: avoid; }
       .scope-list li + li { margin-top: 1.5mm; }
       .scope-list li::before { width: 2.5mm; height: 1.3mm; border-color: #222; left: 0; }
-      .essentials { margin-top: 4mm; color: #333; font-size: 8pt; line-height: 1.6; }
-      .essentials p + p { margin-top: 2mm; }
-      .personal-message { display: flow-root; margin-top: 4mm; padding-top: 3mm; border-color: #ccc; background: #fff; color: #333; font-size: 8pt; line-height: 1.6; break-inside: avoid; }
-      .personal-signoff { margin-top: 2mm; }
+      .essentials { margin-top: 3mm; color: #333; font-size: 8pt; line-height: 1.45; }
+      .essentials p + p { margin-top: 1.5mm; }
+      .personal-message { display: flex; flex-direction: column; margin-top: 3mm; padding-top: 2mm; border-color: #ccc; background: #fff; color: #333; font-size: 8pt; line-height: 1.6; break-inside: avoid; break-after: avoid; }
+      .personal-message p { order: 1; max-width: none; }
+      .personal-signoff { order: 2; margin-top: 2mm; }
       .personal-signature { width: auto; max-width: 100%; margin-top: 0; color: #111; font-size: 10pt; line-height: 1.5; }
-      .personal-memoji { float: right; width: auto; height: 25mm; max-width: none; margin: 0 0 0 5mm; }
-      .contact { margin-top: 3mm; text-align: left; line-height: 1.5; }
+      .personal-memoji { order: 3; align-self: center; flex: none; float: none; width: auto; height: 55mm; max-width: 100%; margin: 3mm 0 0; }
+      .contact { margin-top: 3mm; text-align: left; line-height: 1.5; break-before: avoid; break-inside: avoid; }
       .action-green { display: inline; width: auto; min-height: 0; padding: 0; border: 0; background: none; color: #111; font-size: 8pt; font-weight: 600; text-decoration: underline; }
       .action-green svg { display: none; }
       .conditions { margin-top: 5mm; padding-top: 4mm; border-bottom: 0; }
